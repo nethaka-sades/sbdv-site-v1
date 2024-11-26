@@ -17,18 +17,12 @@
  *  
  *  
  *  
- *  Created on Sat Nov 23 2024
+ *  Created on Sun Nov 24 2024
  *  
  */
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
-
-export default function Home() {
-  return (
-    <div>
-      <div className="text-3xl text-center">Home</div>
-    </div>
-  );
+export default function About(){
+    return(
+        <div className="text-3xl text-center">About</div>
+    );
 }
