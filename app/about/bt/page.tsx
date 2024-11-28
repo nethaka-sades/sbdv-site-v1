@@ -24,11 +24,11 @@
 
 import LoadingScreen from "@/components/LoadingScreen";
 
-export default function Aboutdp(){
-    return(
-        <div>
-            <LoadingScreen />
-            <div>About</div>
-        </div>
-    );
+export default function Home() {
+  return (
+    <div>
+          <LoadingScreen />
+          <div>bellanvila temple</div>
+    </div>
+  );
 }
