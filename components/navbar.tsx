@@ -86,9 +86,9 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 ml-8 mr-8 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 md:16 items-center">
-        <div className="flex items-center space-x-4 lg:space-x-6">
+        <div className="flex items-center space-x-4 lg:space-x-6 ml-8">
           <Link href="/" className="flex items-center space-x-2">
             <Image src={main_logo} alt="main_pic" className="w-[150px]" />
           </Link>
@@ -98,14 +98,14 @@ export function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400">About</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">About</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/"
+                            href="/about"
                           >
                             <div className="mb-2 mt-4 text-lg font-medium">
                               About
@@ -116,18 +116,18 @@ export function Navbar() {
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/docs" title="Bellanvila Temple">
+                      <ListItem href="/about/bt" title="Bellanvila Temple">
                         Introduction to Bellanvila Temple.
                       </ListItem>
                       <ListItem
-                        href="/docs/installation"
+                        href="/about/admin"
                         title="Administration"
                       >
                         Structure and Administration of Sri Bodhiraja Dhamma
                         School.
                       </ListItem>
                       <ListItem
-                        href="/docs/primitives/typography"
+                        href="/about/teachers"
                         title="Teaching Panel"
                       >
                         Our Resource Persons, Our Guide.
@@ -136,7 +136,7 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400">Prefects Guild</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">Prefects Guild</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {pg_components.map((pg_component) => (
@@ -152,7 +152,7 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400">More</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">More</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {more_components.map((more_component) => (
@@ -172,7 +172,7 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100">
+          <Button variant="outline" className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8">
             Access LMS
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -181,11 +181,11 @@ export function Navbar() {
                 variant="ghost"
                 className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5 mr-8" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="bottom" className="pr-0">
+            <SheetContent side="right" className="pr-0">
               <SheetTitle></SheetTitle>
               <MobileLink
                 href="/"
