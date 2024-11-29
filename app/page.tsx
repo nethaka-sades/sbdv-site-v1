@@ -22,7 +22,6 @@
  */
 
 import Hero from "@/components/hero";
-import ImageCarousel from "@/components/ImageCarousel";
 import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
@@ -30,14 +29,6 @@ export default function Home() {
     <div>
       <LoadingScreen />
       <main>
-        <Hero />
-        <br />
-        <Hero />
-        <br />
-        <Hero />
-        <br />
-        <Hero />
-        <br />
         <Hero />
       </main>
     </div>
