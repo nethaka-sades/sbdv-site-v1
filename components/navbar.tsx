@@ -44,25 +44,25 @@ const more_components: { title: string; href: string; description: string }[] =
   [
     {
       title: "Extra-Curricular Activites",
-      href: "/docs/primitives/alert-dialog",
+      href: "/more/ec_acts",
       description:
         "A modal dialog that interrupts the user with important content and expects a response.",
     },
     {
       title: "Resources",
-      href: "/docs/primitives/hover-card",
+      href: "/more/more_res",
       description:
         "For sighted users to preview content available behind a link.",
     },
     {
-      title: "Gallary",
-      href: "/docs/primitives/progress",
+      title: "Gallery",
+      href: "/more/more_res",
       description:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
     },
     {
       title: "About LMS",
-      href: "/docs/primitives/progress",
+      href: "/more/about_lms",
       description:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
     },
@@ -71,13 +71,13 @@ const more_components: { title: string; href: string; description: string }[] =
 const pg_components: { title: string; href: string; description: string }[] = [
   {
     title: "Board of Officials 2024/25",
-    href: "/docs/primitives/hover-card",
+    href: "/pg",
     description:
       "Board of Officials of Sri Bodhiraja Dhamma School's Prefects Guild.",
   },
   {
     title: "History",
-    href: "/docs/primitives/progress",
+    href: "/pg/pg_history",
     description: "Unfold the Legacy.",
   },
 ];
@@ -196,43 +196,43 @@ export function Navbar() {
               </MobileLink>
               <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
                 <div className="flex flex-col space-y-3">
-                  <MobileLink href="/docs" onOpenChange={setIsOpen}>
+                  <MobileLink href="/about" onOpenChange={setIsOpen}>
                     About
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink href="/about/bt" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
                     Bellanvila Temple
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink href="/about" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
                     Sri Bodhiraja Dhamma School
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink href="/about/administration" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
                     Administration
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink href="/about/teachers" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
                     Teaching Panal
                   </MobileLink>
-                  <MobileLink href="/docs/components" onOpenChange={setIsOpen}>
+                  <MobileLink href="/pg" onOpenChange={setIsOpen}>
                     Prefects Guild
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink href="/pg" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
                     Board of Officials 2024/25
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink href="/pg/pg_history" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
                     Our Legacy
                   </MobileLink>
-                  <MobileLink href="/themes" onOpenChange={setIsOpen}>
+                  <MobileLink href="/more" onOpenChange={setIsOpen}>
                     More
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink href="/more/ec_acts" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
                     Extra-Curricular Activities
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink href="/more/more_res" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
                     Resources
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
-                    Gallary
+                  <MobileLink href="/more/gallery" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                    Gallery
                   </MobileLink>
-                  <MobileLink href="/docs" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink href="/more/about_lms" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
                     About LMS
                   </MobileLink>
                 </div>
