@@ -26,6 +26,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const aclonica = localFont({
   src: "./fonts/Aclonica-Regular.woff2",
@@ -59,6 +61,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
