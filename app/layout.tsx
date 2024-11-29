@@ -27,15 +27,15 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const aclonica = localFont({
+  src: "./fonts/Aclonica-Regular.woff2",
+  variable: "--font-aclonica",
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const alatsi = localFont({
+  src: "./fonts/Alatsi-Regular.woff2",
+  variable: "--font-alatsi",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,10 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}> 
+      <body className="antialiased">
         <ThemeProvider 
         attribute="class"
         defaultTheme="dark"
