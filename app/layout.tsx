@@ -26,8 +26,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Head from "next/head";
 
 const aclonica = localFont({
   src: "./fonts/Aclonica-Regular.woff2",
@@ -41,8 +42,9 @@ const alatsi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SBDV",
+  title: "Sri Bodhiraja Dhamma School",
   description: "Official Web Portal of Sri Bodhiraja Dhamma School",
+  
 };
 
 export default function RootLayout({
@@ -51,15 +53,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}> 
+    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="SBDV" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      
       <body className="antialiased">
-        <ThemeProvider 
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        >
-        <Navbar />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Navbar />
+          {children}
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
