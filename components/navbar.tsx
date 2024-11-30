@@ -28,6 +28,8 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import main_logo from "@/public/main_logo.webp";
+import logo_only from "@/public/logo.webp";
+import bg_webp from "@/public/hero-images/1.webp";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -87,7 +89,7 @@ export function Navbar() {
 
   return (
     <header className="font-normal sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 md:16 items-center">
+      <div className="flex h-14 md:h-16">
         <div className="flex items-center space-x-4 lg:space-x-6 ml-8">
           <Link href="/" className="flex items-center space-x-2">
             <Image src={main_logo} alt="main_pic" className="w-[150px]" />
@@ -104,10 +106,15 @@ export function Navbar() {
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            className="flex h-full w-full select-none flex-col text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                             href="/about"
                           >
-                            <div className="mb-2 mt-4 text-lg font-medium">
+                            <Image 
+                              src={logo_only}
+                              alt="logo"
+                              className="z-50"
+                            />
+                            <div className="mt-3 text-lg font-medium">
                               About
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
