@@ -72,42 +72,40 @@ export default function Hero() {
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-55 z-20"></div>
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/80 z-30"></div>
-        {/* Gradients
-        <div
-          aria-hidden="true"
-          className="flex absolute -top-96 start-1/2 transform -translate-x-1/2"
-        >
-          <div className="bg-gradient-to-r from-background/50 to-background blur-3xl w-[25rem] h-[44rem] rotate-[-60deg] transform -translate-x-[10rem]" />
-          <div className="bg-gradient-to-tl blur-3xl w-[90rem] h-[50rem] rounded-full origin-top-left -rotate-12 -translate-x-[15rem] from-primary-foreground via-primary-foreground to-background" />
-        </div>
-         End Gradients */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40">
+        <div className="absolute w-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40">
           <div className="">
-            <div className="text-center mx-auto">
-              <p className="text-muted-foreground">
-                Welcome to the Official Web Portal of
+            <div className="text-center">
+              <p className="text-gray-400 sm:hidden">
+              <span className="text-gray-300">Welcome</span> to the<br />Official <span className="text-gray-300">Web Portal</span> of
               </p>
-              {/* Title */}
+              <p className="text-gray-400 hidden sm:block">
+                <span className="text-gray-300">Welcome</span> to the Official <span className="text-gray-300">Web Portal</span> of
+              </p>
+
               <div className="mt-3">
                 <h1 className="font-special text-4xl font-extrabold lg:text-5xl">
-                  Sri Bodhiraja Dhamma School
+                  Sri Bodhiraja<br />Dhamma School
                 </h1>
               </div>
-              {/* End Title */}
-              <div className="mt-5 max-w-3xl">
-                <p className="text-xl text-muted-foreground">
+
+              <div className="mt-5">
+                <p className="text-base text-muted-foreground sm:hidden">
+                  Bellanvila Sri Bodhiraja Dhamma School<br />is a leading Dhamma
+                  School<br />in Sri Lanka since 1957
+                </p>
+                <p className="text-lg text-muted-foreground hidden sm:contents">
                   Bellanvila Sri Bodhiraja Dhamma School is a leading Dhamma
-                  School in <br /> Sri Lanka since 1957
+                  School<br />in Sri Lanka since 1957
                 </p>
               </div>
-              {/* Buttons */}
+
               <div className="mt-8">
                 <Button className="text-lg text-white" size={"lg"}>
                   Explore
                   <ChevronRight />
                 </Button>
               </div>
-              {/* End Buttons */}
+
             </div>
           </div>
         </div>
