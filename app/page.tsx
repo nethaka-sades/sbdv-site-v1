@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div>
       <LoadingScreen />
-      <main>
+      <main className="">
         <Hero />
       </main>
     </div>
