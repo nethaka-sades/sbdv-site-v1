@@ -25,7 +25,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
@@ -49,9 +49,9 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <>
+    <div className="relative overflow-hidden">
       {/* Hero */}
-      <div className="font-normal">
+      <div className="flex justify-center items-center w-full h-screen font-normal">
         <div className="absolute inset-0 z-10">
           {images.map((src, index) => (
             <div
@@ -72,45 +72,52 @@ export default function Hero() {
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-55 z-20"></div>
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/80 z-30"></div>
-        <div className="absolute w-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40">
-          <div className="">
-            <div className="text-center">
-              <p className="text-gray-400 sm:hidden">
-              <span className="text-gray-300">Welcome</span> to the<br />Official <span className="text-gray-300">Web Portal</span> of
-              </p>
-              <p className="text-gray-400 hidden sm:block">
-                <span className="text-gray-300">Welcome</span> to the Official <span className="text-gray-300">Web Portal</span> of
-              </p>
+        <div className="absolute w-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40 text-center">
+          <p className="text-gray-400 sm:hidden">
+            <span className="text-gray-300">Welcome</span> to the
+            <br />
+            Official <span className="text-gray-300">Web Portal</span> of
+          </p>
+          <p className="text-gray-400 hidden sm:block">
+            <span className="text-gray-300">Welcome</span> to the Official{" "}
+            <span className="text-gray-300">Web Portal</span> of
+          </p>
 
-              <div className="mt-3">
-                <h1 className="font-special text-4xl font-extrabold lg:text-5xl">
-                  Sri Bodhiraja<br />Dhamma School
-                </h1>
-              </div>
+          <div className="mt-3">
+            <h1 className="font-special text-4xl font-extrabold lg:text-5xl">
+              Sri Bodhiraja
+              <br />
+              Dhamma School
+            </h1>
+          </div>
 
-              <div className="mt-5">
-                <p className="text-base text-muted-foreground sm:hidden">
-                  Bellanvila Sri Bodhiraja Dhamma School<br />is a leading Dhamma
-                  School<br />in Sri Lanka since 1957
-                </p>
-                <p className="text-lg text-muted-foreground hidden sm:contents">
-                  Bellanvila Sri Bodhiraja Dhamma School is a leading Dhamma
-                  School<br />in Sri Lanka since 1957
-                </p>
-              </div>
+          <div className="mt-5">
+            <p className="text-base text-muted-foreground sm:hidden">
+              Bellanvila Sri Bodhiraja Dhamma School
+              <br />
+              is a leading Dhamma School
+              <br />
+              in Sri Lanka since 1957
+            </p>
+            <p className="text-lg text-muted-foreground hidden sm:contents">
+              Bellanvila Sri Bodhiraja Dhamma School is a leading Dhamma School
+              <br />
+              in Sri Lanka since 1957
+            </p>
+          </div>
 
-              <div className="mt-8">
-                <Button className="text-lg text-white" size={"lg"}>
-                  Explore
-                  <ChevronRight />
-                </Button>
-              </div>
-
-            </div>
+          <div className="mt-8">
+            <Button
+              className="text-lg text-white rounded-2xl border-gray-500 border-[0.025px] bg-transparent shadow-md backdrop-blur-xl hover:border-none"
+              size={"lg"}
+            >
+              Explore
+              <ArrowRight />
+            </Button>
           </div>
         </div>
       </div>
       {/* End Hero */}
-    </>
+    </div>
   );
 }
