@@ -28,7 +28,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Head from "next/head";
 
 const aclonica = localFont({
   src: "./fonts/Aclonica-Regular.woff2",
@@ -47,11 +46,7 @@ export const metadata: Metadata = {
   
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}>
       <head>
