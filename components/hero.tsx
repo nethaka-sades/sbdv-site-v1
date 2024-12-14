@@ -27,6 +27,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,6 +48,12 @@ export default function Hero() {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push("/about"); // Replace with your desired route
+  };
 
   return (
     <div className="relative overflow-hidden">
@@ -110,6 +117,7 @@ export default function Hero() {
             <Button
               className="text-lg text-white rounded-2xl border-gray-500 border-[0.025px] bg-transparent shadow-md backdrop-blur-xl hover:border-none"
               size={"lg"}
+              onClick={handleNavigation}
             >
               Explore
               <ArrowRight />
