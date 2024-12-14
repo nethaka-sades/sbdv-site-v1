@@ -27,15 +27,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const people = [
   {
-    id: "person-1",
-    name: "Name",
-    role: "Role",
+    id: "hp-1",
+    name: "Lakwan Lonidu",
+    role: "Head Prefect",
     avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
   },
   {
-    id: "person-2",
-    name: "Name",
-    role: "Role",
+    id: "hp-2",
+    name: "Selini Dulwanya",
+    role: "Head Prefect",
     avatar: "https://www.shadcnblocks.com/images/block/avatar-2.webp",
   },
   {
@@ -81,10 +81,10 @@ export default function Home() {
     <div>
       <LoadingScreen />
       <main>
-        <section className="py-15">
+        <section className="py-20">
           <div className="container flex flex-col items-center text-center">
-            <h2 className="my-6 text-pretty text-2xl font-bold lg:text-4xl">
-              Meet our team
+            <h2 className="my-3 text-pretty text-2xl font-special font-bold lg:text-4xl">
+              Prefects Guild 2024/25
             </h2>
             <p className="mb-8 max-w-3xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
