@@ -59,7 +59,7 @@ const Footer = () => {
     <section className="pt-5 pb-5 px-5">
       <div className="container">
         <footer>
-          <div className="flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:text-left">
+          <div className="border-t pt-5 flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:text-left">
             <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
