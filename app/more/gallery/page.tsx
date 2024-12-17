@@ -25,7 +25,7 @@
 
 import LoadingScreen from "@/components/LoadingScreen";
 
-export default function Home() {
+export default function gallary() {
   return (
     <div>
           <LoadingScreen />

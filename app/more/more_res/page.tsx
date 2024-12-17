@@ -24,7 +24,7 @@
 
 import LoadingScreen from "@/components/LoadingScreen";
 
-export default function Home() {
+export default function more_res() {
   return (
     <div>
           <LoadingScreen />

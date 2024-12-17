@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import image1 from "@/public/hero-images/1.webp"
 
-export default function Home() {
+export default function bt() {
   return (
     <div>
       <LoadingScreen />

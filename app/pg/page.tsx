@@ -76,7 +76,7 @@ const people = [
   },
 ];
 
-export default function Home() {
+export default function pg() {
   return (
     <div>
       <LoadingScreen />
