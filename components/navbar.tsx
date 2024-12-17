@@ -92,7 +92,7 @@ export function Navbar() {
       <div className="flex h-14 md:h-16">
         <div className="flex items-center space-x-4 lg:space-x-6 ml-8">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={main_logo} alt="main_pic" className="w-[150px]" />
+            <Image src={main_logo} alt="main_pic" className="w-[150px]" priority />
           </Link>
         </div>
         <div className="flex flex-1 items-center ml-8 space-x-2">
@@ -113,6 +113,7 @@ export function Navbar() {
                               src={logo_only}
                               alt="logo"
                               className="z-50"
+                              priority
                             />
                             <div className="mt-3 text-lg font-medium">
                               About
