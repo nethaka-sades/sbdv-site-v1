@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@firebase/auth": "^1.8.1",
+    "@firebase/firestore": "^4.7.5",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.2.1",
