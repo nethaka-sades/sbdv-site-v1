@@ -41,6 +41,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { useRouter } from "next/navigation";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
@@ -85,6 +86,12 @@ const pg_components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push("/lms"); // Replace with your desired route
+  };
+
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -180,7 +187,7 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8">
+          <Button variant="outline" className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8" onClick={handleNavigation}>
             Access LMS
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -249,7 +256,7 @@ export function Navbar() {
                 <Button
                   variant="outline"
                   className="w-full text-orange-400"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(handleNavigation) => setIsOpen(false)}
                 >
                   Access LMS
                 </Button>
