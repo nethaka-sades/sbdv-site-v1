@@ -58,7 +58,7 @@ export default {
 			},
 			fontFamily: {
 				special: ['var(--font-aclonica)'],
-				normal: ['var(--font-alatsi)'],
+				plain: ['var(--font-alatsi)'],
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
