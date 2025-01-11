@@ -58,7 +58,7 @@ export default function Hero() {
   return (
     <div className="relative overflow-hidden">
       {/* Hero */}
-      <div className="flex justify-center items-center w-full h-screen font-normal">
+      <div className="flex justify-center items-center w-full h-screen font-plain">
         <div className="absolute inset-0 z-10">
           {images.map((src, index) => (
             <div

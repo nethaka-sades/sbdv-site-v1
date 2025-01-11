@@ -40,11 +40,11 @@ export default function Aboutdp() {
         <section className="py-32 z-10">
           <div className="container text-center">
             <div className="mx-auto flex max-w-screen-lg flex-col gap-2">
-              <p className="font-normal text-muted-foreground ">About</p>
+              <p className="font-plain text-muted-foreground ">About</p>
               <h1 className="text-3xl text-primary font-extrabold font-special lg:text-5xl">
                 Sri Bodhiraja Dharma Vidyalaya
               </h1>
-              <p className="text-balance font-normal text-muted-foreground lg:text-lg">
+              <p className="text-balance font-plain text-muted-foreground lg:text-lg">
                 Sri Bodhiraja Dharma Vidyalaya, the Dhamma School at Bellanwila
                 Raja Maha Viharaya, has been a vital institution for Buddhist
                 education since 1957.
@@ -57,7 +57,7 @@ export default function Aboutdp() {
           <div className="container">
             <div className="grid items-center gap-5 lg:grid-cols-2 bg-black bg-opacity-60 p-8 rounded-3xl shadow-md">
               <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                <p className="mb-2 max-w-xl text-muted-foreground font-normal lg:text-lg">
+                <p className="mb-2 max-w-xl text-muted-foreground lg:text-lg">
                   Conducted in both Sinhala and English mediums, the dhamma
                   school ensures accessibility for a diverse student body,
                   fostering a broader understanding of the Buddha's teachings.
