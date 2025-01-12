@@ -87,12 +87,12 @@ export default function pg() {
     <div>
       <LoadingScreen />
       <main>
-        <section className="pt-20">
+        <section className="pt-20 px-10">
           <div className="container flex flex-col items-center text-center">
             <h2 className="my-3 text-pretty text-2xl font-special font-bold lg:text-4xl">
-              Prefects Guild 2024/25
+              Prefects Guild<br className="block md:hidden"></br> 2024/25
             </h2>
-            <p className="mb-8 max-w-7xl text-muted-foreground lg:text-xl">
+            <p className="mb-8 max-w-7xl text-muted-foreground lg:text-xl font-plain">
               The Prefects' Guild at Sri Bodhiraja Dhamma School represents the
               pinnacle of student leadership and responsibility. As role models
               and ambassadors of the school's values, prefects uphold
@@ -108,10 +108,10 @@ export default function pg() {
         </section>
 
         <section className="pt-12 pb-12">
-          <div className="container grid md:grid-cols-1 lg:grid-cols-2">
+          <div className="container grid gap-y-10 md:grid-cols-1 lg:grid-cols-2">
             {hps.map((hps) => (
               <div key={hps.id} className="flex flex-col items-center">
-                <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">
+                <Avatar className="mb-4 size-28 border md:mb-5 lg:size-24">
                   <AvatarImage src={hps.avatar} />
                   <AvatarFallback>{hps.name}</AvatarFallback>
                 </Avatar>
@@ -121,10 +121,10 @@ export default function pg() {
             ))}
           </div>
 
-          <div className="container mt-16 grid gap-x-60 md:grid-cols-1 lg:grid-cols-2">
+          <div className="container mt-16 grid gap-x-60 gap-y-10 md:grid-cols-1 lg:grid-cols-2">
             {sdhp.map((sdhp) => (
               <div key={sdhp.id} className="flex flex-col items-center">
-                <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">
+                <Avatar className="mb-4 size-24 border md:mb-5 lg:size-24">
                   <AvatarImage src={sdhp.avatar} />
                   <AvatarFallback>{sdhp.name}</AvatarFallback>
                 </Avatar>
@@ -134,7 +134,7 @@ export default function pg() {
             ))}
           </div>
 
-          <div className="container mt-16 grid md:grid-cols-1 lg:grid-cols-4">
+          <div className="container mt-16 grid gap-y-10 grid-cols-1 lg:grid-cols-4">
             {dhp.map((dhp) => (
               <div key={dhp.id} className="flex flex-col items-center">
                 <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">
@@ -149,7 +149,7 @@ export default function pg() {
         </section>
 
         <section>
-          <div className="flex flex-col items-center">
+          <div className="py-5 flex flex-col items-center">
             <p className="text-center font-medium">Executive Prefects</p>
             <p className="text-center text-muted-foreground">Hasali Methsala</p>
             <p className="text-center text-muted-foreground">Tharushi Vihangana</p>
@@ -159,8 +159,8 @@ export default function pg() {
           </div>
         </section>
 
-        <section className="pt-2 pb-20">
-          <div className="container grid md:grid-cols-2 lg:grid-col-2">
+        <section className="py-5">
+          <div className="container grid gap-y-5 md:grid-cols-2 lg:grid-col-2">
             <div className="flex flex-col items-center">
               <p className="text-center font-medium">Senior Prefects</p>
               <p className="text-center text-muted-foreground">
@@ -196,8 +196,8 @@ export default function pg() {
           </div>
         </section>
 
-        <section className="pt-2 pb-20">
-          <div className="container grid md:grid-cols-2 lg:grid-col-2">
+        <section className="py-5">
+          <div className="container grid gap-y-5 md:grid-cols-2 lg:grid-col-2">
             <div className="flex flex-col items-center">
               <p className="text-center font-medium">Junior Prefects</p>
               <p className="text-center text-muted-foreground">

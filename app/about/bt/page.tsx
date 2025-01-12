@@ -42,17 +42,17 @@ export default function bt() {
               fill
               className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
             />
-            <p className="pb-3 font-normal text-muted-foreground">About</p>
-            <h1 className="scroll-m-30 text-4xl font-extrabold font-special tracking-tight lg:text-5xl">
-              Bellanvila Raja Maha Viharaya
+            <p className="pb-3 font-plain text-muted-foreground">About</p>
+            <h1 className="text-2xl font-extrabold font-special tracking-tight lg:text-5xl">
+              Bellanvila Raja<br className="block md:hidden"></br> Maha Viharaya
             </h1>
-            <p className="mt-3 font-plain text-sm md:text-xl text-muted-foreground">
+            <p className="px-10 mt-3 font-plain text-sm md:text-xl text-muted-foreground">
               Bellanwila Raja Maha Viharaya is one of Sri Lanka's most
               spiritually significant Buddhist temples, attracting thousands of
               devotees annually.
             </p>
           </div>
-          <div className="mt-10 relative max-w-5xl mx-auto pb-10 lg:pb-12">
+          <div className="px-10 mt-10 relative max-w-5xl mx-auto">
             <Image
               src={image1}
               className="rounded-xl"
@@ -61,8 +61,8 @@ export default function bt() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden container pt-24">
-          <p className="font-plain text-sm md:text-xl text-muted-foreground max-w-3xl md:max-w-5xl text-center mx-auto">
+        <section className="relative overflow-hidden container pt-10">
+          <p className="px-10 font-plain text-sm md:text-xl text-muted-foreground max-w-3xl md:max-w-5xl text-center mx-auto">
             Bellanwila Raja Maha Viharaya, located near Colombo, Sri Lanka, is a
             renowned Buddhist temple celebrated for its sacred Bodhi tree, a
             sapling from the revered Jaya Sri Maha Bodhi in Anuradhapura.
@@ -75,7 +75,7 @@ export default function bt() {
             ambiance, historical significance, and architectural beauty.
           </p>
 
-          <section className="pt-10 px-24 pb-24">
+          <section className="pt-10 px-10 pb-20">
             <div className="container">
               <div className="grid items-center gap-5 lg:grid-cols-2 bg-black bg-opacity-95 p-8 rounded-3xl shadow-md">
                 <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -104,7 +104,7 @@ export default function bt() {
           </section>
         </section>
 
-        <section className="relative overflow-hidden container">
+        <section className="px-10 relative overflow-hidden container">
           <div className="max-w-7xl text-center pt-12 lg:pt-16  pb-12 mx-auto ">
             <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
             <Image
@@ -116,7 +116,7 @@ export default function bt() {
             <h1 className="scroll-m-30 text-4xl font-extrabold font-special tracking-tight lg:text-5xl">
               History
             </h1>
-            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-3">
+            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-4 md:leading-snug">
               There is literary evidence in ancient texts such as the Sinhala
               Bodhivamsaya which records that the Bodhi-tree in Bellanwila as
               one of the thirty-two saplings that sprang from the sacred Jaya
@@ -129,7 +129,7 @@ export default function bt() {
               all of Sri Lanka under one rule before the European colonial
               invasions.
             </p>
-            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-3">
+            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-4 md:leading-snu">
               The story of the revival of Bellanwila Viharaya is closely linked
               with Attidiya, a village adjoining Bellanwila. This sacred place
               was abandoned after the Portuguese invasion of the country’s
@@ -148,7 +148,7 @@ export default function bt() {
               to attract the attention of Buddhist devotees in the
               neighbourhood.
             </p>
-            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-3">
+            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-4 md:leading-snu">
               Since Thengodagedara thera rediscovered Bellanwila, the temple has
               had a succession of chief monks such as Udugampola Sri Ratanapala
               thera, Udugampola Sri Dammakkhandha thera, Abhidhammika Weboda Sri
@@ -163,7 +163,7 @@ export default function bt() {
               Wimalaratne Thera has continued the development work of the
               temple.
             </p>
-            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-3">
+            <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-4 md:leading-snu">
               A recent addition to the temple is a set of murals, that adorn the
               inner walls of the shrine hall &#40Budu-Ge@#41. These murals which were
               painted by artist Somabandu Vidyapathy, depict in different

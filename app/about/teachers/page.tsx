@@ -81,12 +81,12 @@ export default function teachers() {
     <div>
       <LoadingScreen />
       <main>
-        <section className="py-20">
+        <section className="py-20 px-10">
           <div className="container flex flex-col items-center text-center">
             <h2 className="my-3 text-pretty text-2xl font-special font-bold lg:text-4xl">
-              Teaching Panel 2024/25
+              Teaching Panel<br className="block md:hidden"></br> 2024/25
             </h2>
-            <p className="mb-8 max-w-5xl text-muted-foreground lg:text-xl">
+            <p className="mb-8 max-w-5xl text-muted-foreground font-plain text-sm lg:text-xl">
               At Sri Bodhiraja Dhamma School, our dedicated team of teachers
               plays a pivotal role in nurturing the spiritual and moral growth
               of our students. With deep knowledge of Buddhist teachings and a
@@ -100,7 +100,7 @@ export default function teachers() {
             </p>
           </div>
           <div key="1" className="flex flex-col items-center pt-10">
-            <Avatar className="mb-4 size-30 border md:mb-5 lg:size-32">
+            <Avatar className="mb-4 size-28 border md:mb-5 lg:size-32">
               <AvatarImage
                 src={"https://www.shadcnblocks.com/images/block/avatar-8.webp"}
               />
@@ -110,15 +110,15 @@ export default function teachers() {
             <p className="text-center text-muted-foreground">Principle</p>
           </div>
 
-          <div className="container mt-16 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-6">
+          <div className="container mt-16 grid gap-x-8 gap-y-16 grid-cols-2 lg:grid-cols-6">
             {people.map((person) => (
               <div key={person.id} className="flex flex-col items-center">
-                <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">
+                <Avatar className="mb-4 size-16 border md:mb-5 lg:size-24">
                   <AvatarImage src={person.avatar} />
                   <AvatarFallback>{person.name}</AvatarFallback>
                 </Avatar>
-                <p className="text-center font-medium">{person.name}</p>
-                <p className="text-center text-muted-foreground">
+                <p className="text-sm text-center font-medium">{person.name}</p>
+                <p className="text-sm text-center text-muted-foreground">
                   {person.role}
                 </p>
               </div>
