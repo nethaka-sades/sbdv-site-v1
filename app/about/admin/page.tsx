@@ -28,7 +28,7 @@ export default function admin() {
   return (
     <div>
           <LoadingScreen />
-          <div>admin</div>
+          
     </div>
   );
 }
