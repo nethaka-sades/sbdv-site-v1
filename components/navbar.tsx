@@ -1,24 +1,24 @@
 /*
- *  
+ *
  *   Copyright 2024 Nethaka De Saram
- *  
+ *
  *  Licensed under the Apache License, Version 2.0 (the 'License');
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- *  
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an 'AS IS' BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- *  
- *  
- *  
- *  
+ *
+ *
+ *
+ *
  *  Created on Wed Nov 27 2024
- *  
+ *
  */
 
 "use client";
@@ -40,8 +40,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { useRouter } from "next/navigation";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
@@ -86,12 +90,6 @@ const pg_components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
-  const router = useRouter();
-
-  const handleNavigation = () => {
-    router.push("/lms"); // Replace with your desired route
-  };
-
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -99,7 +97,12 @@ export function Navbar() {
       <div className="flex h-14 md:h-16">
         <div className="flex items-center space-x-4 lg:space-x-6 ml-8">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={main_logo} alt="main_pic" className="w-[150px]" priority />
+            <Image
+              src={main_logo}
+              alt="main_pic"
+              className="w-[150px]"
+              priority
+            />
           </Link>
         </div>
         <div className="flex flex-1 items-center ml-8 space-x-2">
@@ -107,7 +110,9 @@ export function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">About</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
+                    About
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
@@ -116,7 +121,7 @@ export function Navbar() {
                             className="flex h-full w-full select-none flex-col text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                             href="/about"
                           >
-                            <Image 
+                            <Image
                               src={logo_only}
                               alt="logo"
                               className="z-50"
@@ -134,24 +139,20 @@ export function Navbar() {
                       <ListItem href="/about/bt" title="Bellanvila Temple">
                         Introduction to Bellanvila Temple.
                       </ListItem>
-                      <ListItem
-                        href="/about/admin"
-                        title="Administration"
-                      >
+                      <ListItem href="/about/admin" title="Administration">
                         Structure and Administration of Sri Bodhiraja Dhamma
                         School.
                       </ListItem>
-                      <ListItem
-                        href="/about/teachers"
-                        title="Teaching Panel"
-                      >
+                      <ListItem href="/about/teachers" title="Teaching Panel">
                         Our Resource Persons, Our Guide.
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">Prefects Guild</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
+                    Prefects Guild
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {pg_components.map((pg_component) => (
@@ -167,7 +168,9 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">More</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
+                    More
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {more_components.map((more_component) => (
@@ -187,9 +190,14 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8" onClick={handleNavigation}>
-            Access LMS
-          </Button>
+          <Link href={"/lms"}>
+            <Button
+              variant="outline"
+              className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
+            >
+              Access LMS
+            </Button>
+          </Link>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -214,52 +222,94 @@ export function Navbar() {
                   <MobileLink href="/about" onOpenChange={setIsOpen}>
                     About
                   </MobileLink>
-                  <MobileLink href="/about/bt" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink
+                    href="/about/bt"
+                    onOpenChange={setIsOpen}
+                    className="ml-6 text-slate-500"
+                  >
                     Bellanvila Temple
                   </MobileLink>
-                  <MobileLink href="/about" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink
+                    href="/about"
+                    onOpenChange={setIsOpen}
+                    className="ml-6 text-slate-500"
+                  >
                     Sri Bodhiraja Dhamma School
                   </MobileLink>
-                  <MobileLink href="/about/administration" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink
+                    href="/about/administration"
+                    onOpenChange={setIsOpen}
+                    className="ml-6 text-slate-500"
+                  >
                     Administration
                   </MobileLink>
-                  <MobileLink href="/about/teachers" onOpenChange={setIsOpen} className="ml-6 text-slate-500">
+                  <MobileLink
+                    href="/about/teachers"
+                    onOpenChange={setIsOpen}
+                    className="ml-6 text-slate-500"
+                  >
                     Teaching Panal
                   </MobileLink>
                   <MobileLink href="/pg" onOpenChange={setIsOpen}>
                     Prefects Guild
                   </MobileLink>
-                  <MobileLink href="/pg" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/pg"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     Board of Officials 2024/25
                   </MobileLink>
-                  <MobileLink href="/pg/pg_history" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/pg/pg_history"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     Our Legacy
                   </MobileLink>
                   <MobileLink href="/more" onOpenChange={setIsOpen}>
                     More
                   </MobileLink>
-                  <MobileLink href="/more/ec_acts" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/more/ec_acts"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     Extra-Curricular Activities
                   </MobileLink>
-                  <MobileLink href="/more/more_res" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/more/more_res"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     Resources
                   </MobileLink>
-                  <MobileLink href="/more/gallery" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/more/gallery"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     Gallery
                   </MobileLink>
-                  <MobileLink href="/more/about_lms" onOpenChange={setIsOpen} className="ml-8 text-slate-500">
+                  <MobileLink
+                    href="/more/about_lms"
+                    onOpenChange={setIsOpen}
+                    className="ml-8 text-slate-500"
+                  >
                     About LMS
                   </MobileLink>
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                <Button
-                  variant="outline"
-                  className="w-full text-orange-400"
-                  onClick={(handleNavigation) => setIsOpen(false)}
-                >
-                  Access LMS
-                </Button>
+                <Link href={"/lms"} passHref>
+                  <Button
+                    variant="outline"
+                    className="w-full text-orange-400"
+                    onClick={(e) => {setIsOpen(false)}}
+                  >
+                    Access LMS
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
