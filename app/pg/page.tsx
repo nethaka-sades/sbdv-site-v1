@@ -89,7 +89,7 @@ export default function pg() {
       <main>
         <section className="pt-20 px-10">
           <div className="container flex flex-col items-center text-center">
-            <h2 className="my-3 text-pretty text-2xl font-special font-bold lg:text-4xl">
+            <h2 className="my-3 text-pretty text-2xl font-special font-bold text-orange-600 lg:text-5xl">
               Prefects Guild<br className="block md:hidden"></br> 2024/25
             </h2>
             <p className="mb-8 max-w-7xl text-muted-foreground lg:text-xl font-plain">
