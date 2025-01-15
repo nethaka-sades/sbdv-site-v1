@@ -21,14 +21,9 @@
  *  
  */
 
-
-import LoadingScreen from "@/components/LoadingScreen";
-
 export default function admin() {
   return (
-    <div>
-          <LoadingScreen />
-          
+    <div>          
     </div>
   );
 }

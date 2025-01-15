@@ -21,14 +21,12 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
 import Image from "next/image";
 import image1 from "@/public/hero-images/1.webp";
 
 export default function Aboutdp() {
   return (
     <div>
-      <LoadingScreen />
       <main className="px-5">
         <Image
           src={image1}

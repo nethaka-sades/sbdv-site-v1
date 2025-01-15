@@ -21,8 +21,6 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import image1 from "@/public/hero-images/1.webp";
 import image2 from "@/public/images/p1.webp";
@@ -31,7 +29,6 @@ import image3 from "@/public/images/p3.webp";
 export default function bt() {
   return (
     <div>
-      <LoadingScreen />
       <main className="">
         <section className="relative overflow-hidden container">
           <div className="max-w-3xl text-center pt-24 lg:pt-32 mx-auto">

@@ -21,8 +21,6 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import imageb from "@/public/images/p5.webp";
@@ -87,7 +85,6 @@ const dhp = [
 export default function pg() {
   return (
     <div>
-      <LoadingScreen />
       <main>
         <section className="pt-20 px-10">
           <div className="container flex flex-col items-center text-center">

@@ -22,14 +22,11 @@
  */
 
 import Hero from "@/components/hero";
-import LoadingScreen from "@/components/LoadingScreen";
-import firebase_app from "@/firebase/config";
 
 export default function Home() {
   console.log("Firebase Measurement ID:", process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID);
   return (
     <div>
-      <LoadingScreen />
       <main className="">
         <Hero />
       </main>

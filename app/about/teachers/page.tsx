@@ -21,8 +21,6 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const people = [
@@ -79,7 +77,6 @@ const people = [
 export default function teachers() {
   return (
     <div>
-      <LoadingScreen />
       <main>
         <section className="py-20 px-10">
           <div className="container flex flex-col items-center text-center">
