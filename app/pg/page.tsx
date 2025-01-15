@@ -24,6 +24,8 @@
 import LoadingScreen from "@/components/LoadingScreen";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
+import imageb from "@/public/images/p5.webp";
 
 const hps = [
   {
@@ -89,6 +91,13 @@ export default function pg() {
       <main>
         <section className="pt-20 px-10">
           <div className="container flex flex-col items-center text-center">
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
+            <Image
+              src={imageb}
+              alt="bg-img-1"
+              fill
+              className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
+            />
             <h2 className="my-3 text-pretty text-2xl font-special font-bold text-orange-600 lg:text-5xl">
               Prefects Guild<br className="block md:hidden"></br> 2024/25
             </h2>
@@ -153,7 +162,7 @@ export default function pg() {
             <p className="text-center font-medium">Executive Prefects</p>
             <p className="text-center text-muted-foreground">Hasali Methsala</p>
             <p className="text-center text-muted-foreground">Tharushi Vihangana</p>
-            <p className="text-center text-muted-foreground">Thathsari Lithuniya</p>
+            <p className="text-center text-muted-foreground">Thathsari Lithumiya</p>
             <p className="text-center text-muted-foreground">Kuluni Sneha</p>
             <p className="text-center text-muted-foreground">Minasha Pirisi</p>
           </div>
