@@ -26,6 +26,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { User } from "lucide-react";
 import Image from "next/image";
 import main_logo from "@/public/main_logo.webp";
 import logo_only from "@/public/logo.webp";
@@ -46,6 +47,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useAuthContext } from "@/app/context/AuthContext";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
@@ -91,6 +93,7 @@ const pg_components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { user } = useAuthContext();
 
   return (
     <header className="font-normal sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -190,14 +193,25 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href={"/lms"}>
-            <Button
-              variant="outline"
-              className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
-            >
-              Access LMS
-            </Button>
-          </Link>
+          {!user?.email ? (
+            <Link href={"/lms"}>
+              <Button
+                variant="outline"
+                className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
+              >
+                Access LMS
+              </Button>
+            </Link>
+          ) : (
+            <Link href={"/lms/dashboard"}>
+              <Button
+                variant="outline"
+                className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
+              >
+                <User />
+              </Button>
+            </Link>
+          )}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -219,7 +233,7 @@ export function Navbar() {
               </MobileLink>
               <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
                 <div className="flex flex-col space-y-3">
-                  <MobileLink href="/about" onOpenChange={setIsOpen}>
+                  <MobileLink href="" onOpenChange={setIsOpen}>
                     About
                   </MobileLink>
                   <MobileLink
@@ -250,7 +264,7 @@ export function Navbar() {
                   >
                     Teaching Panal
                   </MobileLink>
-                  <MobileLink href="/pg" onOpenChange={setIsOpen}>
+                  <MobileLink href="" onOpenChange={setIsOpen}>
                     Prefects Guild
                   </MobileLink>
                   <MobileLink
@@ -267,7 +281,7 @@ export function Navbar() {
                   >
                     Our Legacy
                   </MobileLink>
-                  <MobileLink href="/more" onOpenChange={setIsOpen}>
+                  <MobileLink href="" onOpenChange={setIsOpen}>
                     More
                   </MobileLink>
                   <MobileLink
@@ -301,15 +315,31 @@ export function Navbar() {
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                <Link href={"/lms"} passHref>
-                  <Button
-                    variant="outline"
-                    className="w-full text-orange-400"
-                    onClick={(e) => {setIsOpen(false)}}
-                  >
-                    Access LMS
-                  </Button>
-                </Link>
+                {!user?.email ? (
+                  <Link href={"/lms"} passHref>
+                    <Button
+                      variant="outline"
+                      className="rounded text-orange-500 w-full"
+                      onClick={(e) => {
+                        setIsOpen(false);
+                      }}
+                    >
+                      Access LMS
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href={"/lms/dashboard"} passHref>
+                    <Button
+                      variant="outline"
+                      className="rounded text-orange-500 w-full"
+                      onClick={(e) => {
+                        setIsOpen(false);
+                      }}
+                    >
+                      <User />
+                    </Button>
+                  </Link>
+                )}
               </div>
             </SheetContent>
           </Sheet>
