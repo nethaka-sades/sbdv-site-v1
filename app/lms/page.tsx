@@ -17,10 +17,9 @@
  *
  *
  *
- *  Created on Mon Jan 13 2025
+ *  Created on Wed Jan 15 2025
  *
  */
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -34,13 +33,20 @@ import {
 import LoadingScreen from "@/components/LoadingScreen";
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import imageb from "@/public/images/p6.webp";
 
 export default function Lms() {
   return (
-    <div>
-      <LoadingScreen />
       <main className="">
         <section className="pt-24 lg:pt-32">
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
+          <Image
+            src={imageb}
+            alt="bg-img-1"
+            fill
+            className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
+          />
           <div className="container flex flex-col items-center text-center">
             <p className="text-muted-foreground font-plain text-sm md:text-md">
               Access Our
@@ -59,53 +65,40 @@ export default function Lms() {
 
         <section>
           <div className="container py-12 px-5">
-            {/* Grid */}
             <div className="lg:px-60 grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Card */}
               <Card className="items-center">
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className="">I'm a</CardTitle>
-                  <span className="font-bold text-5xl">Teacher</span>
+                  <span className="font-bold text-5xl mb-5">Login</span>
                 </CardHeader>
                 <CardDescription className="text-center mb-5">
-                  Access Portal for Teachers
+                  Access Your Account
                 </CardDescription>
                 <CardFooter className="flex flex-col gap-3">
-                  <Link href={"/login"}>
+                  <Link href={"/lms/signin"}>
                     <Button className="w-80 bg-primary" variant={"outline"}>
                       Login
                     </Button>
                   </Link>
-                  <Button className="w-80" variant={"outline"}>
-                    Register
-                  </Button>
                 </CardFooter>
               </Card>
-              {/* End Card */}
-              {/* Card */}
               <Card className="items-center">
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className="">I'm a</CardTitle>
-                  <span className="font-bold text-5xl">Student</span>
+                  <span className="font-bold text-5xl mb-5">Register</span>
                 </CardHeader>
                 <CardDescription className="text-center mb-5">
-                  Access Portal for Students
+                  Create a new Account
                 </CardDescription>
                 <CardFooter className="flex flex-col gap-3">
-                  <Button className="w-80 bg-primary" variant={"outline"}>
-                    Login
-                  </Button>
-                  <Button className="w-80" variant={"outline"}>
-                    Register
-                  </Button>
+                  <Link href={"/lms/signup"}>
+                    <Button className="w-80" variant={"outline"}>
+                      Register
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
-              {/* End Card */}
             </div>
-            {/* End Grid */}
           </div>
         </section>
       </main>
-    </div>
   );
 }
