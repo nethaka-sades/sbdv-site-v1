@@ -29,6 +29,8 @@ import { Navbar } from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
+import { AuthContextProvider } from "./context/AuthContext";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const aclonica = localFont({
   src: "./fonts/Aclonica-Regular.woff2",
@@ -44,10 +46,11 @@ const alatsi = localFont({
 export const metadata: Metadata = {
   title: "Sri Bodhiraja Dhamma School",
   description: "Official Web Portal of Sri Bodhiraja Dhamma School",
-  
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}>
       <head>
@@ -67,15 +70,18 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         <meta name="apple-mobile-web-app-title" content="SBDV" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      
+
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        <AuthContextProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <Navbar />
+            <LoadingScreen />
+            {children}
+            <Footer />
+          </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+        </AuthContextProvider>
       </body>
     </html>
   );
