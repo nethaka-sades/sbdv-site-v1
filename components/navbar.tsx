@@ -48,6 +48,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useAuthContext } from "@/app/context/AuthContext";
+import profileDropDown from "./UserNav";
+import Hero from "./hero";
+import UserNav from "./UserNav";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
@@ -203,14 +206,9 @@ export function Navbar() {
               </Button>
             </Link>
           ) : (
-            <Link href={"/lms/dashboard"}>
-              <Button
-                variant="outline"
-                className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
-              >
-                <User />
-              </Button>
-            </Link>
+            <div className="hidden md:inline-flex mr-8">
+              <UserNav></UserNav>
+            </div>
           )}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -331,12 +329,12 @@ export function Navbar() {
                   <Link href={"/lms/dashboard"} passHref>
                     <Button
                       variant="outline"
-                      className="rounded text-orange-500 w-full"
+                      className="rounded text-orange-600 text-sm w-full"
                       onClick={(e) => {
                         setIsOpen(false);
                       }}
                     >
-                      <User />
+                      Visit Dashboard
                     </Button>
                   </Link>
                 )}
