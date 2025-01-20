@@ -38,7 +38,7 @@ import imageb from "@/public/images/p6.webp";
 
 export default function Lms() {
   return (
-      <main className="">
+      <main className="h-dvh">
         <section className="pt-24 lg:pt-32">
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
           <Image
