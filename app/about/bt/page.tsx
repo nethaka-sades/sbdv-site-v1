@@ -101,6 +101,36 @@ export default function bt() {
           </section>
         </section>
 
+        <section className="pt-10 px-10 pb-20">
+            <div className="container">
+              <div className="grid items-center gap-5 lg:grid-cols-2 bg-black bg-opacity-95 p-8 rounded-3xl shadow-md">
+                <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                  <p className="mb-2 max-w-xl text-muted-foreground lg:text-lg">
+                    The Bellanwila Temple is not only a spiritual haven but also
+                    a masterpiece of Sri Lankan art and architecture. The temple
+                    premises feature intricately designed statues, murals, and
+                    carvings that depict scenes from Buddhist teachings and
+                    local folklore. Visitors are welcomed by the majestic stupa,
+                    serene Buddha statues, and the tranquil surroundings that
+                    foster mindfulness and peace. The temple’s sacred rituals
+                    and daily offerings create a deeply spiritual experience for
+                    devotees and tourists alike. Bellanwila Raja Maha Viharaya
+                    stands as a testament to Sri Lanka's enduring Buddhist
+                    traditions and its role in preserving cultural and spiritual
+                    heritage.
+                  </p>
+                </div>
+                <Image
+                  src={image2}
+                  alt="hero"
+                  className="max-h-96 w-full rounded-md object-cover"
+                />
+              </div>
+            </div>
+          </section>
+
+        
+
         <section className="px-10 relative overflow-hidden container">
           <div className="max-w-7xl text-center pt-12 lg:pt-16  pb-12 mx-auto ">
             <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>

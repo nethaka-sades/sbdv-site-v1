@@ -39,6 +39,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-sitemap.md
+site plan.md
 
 .env.local
