@@ -27,9 +27,20 @@ import AuthGuard from "@/app/context/AuthGuard";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { LogOut, Settings, Settings2 } from "lucide-react";
+import { LogOut, Settings2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function dashboard() {
   const { logout } = useAuthContext();
@@ -47,6 +58,12 @@ export default function dashboard() {
     } else {
       setErrorMessage("Logout Failed" + isLoggedOut.error);
     }
+  };
+
+  const updateProfile = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    router.push("/lms/dashboard/update_profile");
   };
 
   const notices = [
@@ -90,11 +107,11 @@ export default function dashboard() {
   return (
     <main className="text-white min-h-screen">
       <div className="container mx-auto px-6 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-5xl font-bold font-special">Welcome</h1>
+        <div className="flex flex-col lg:flex-row justify-between space-y-5 items-center mb-8">
+          <h1 className="text-3xl lg:text-5xl font-bold font-special ">Welcome</h1>
           <Button
             variant={"outline"}
-            className="rounded-md hover:bg-orange-600"
+            className="rounded-md border-red-600 hover:bg-red-600"
           >
             <LogOut />
             Logout
@@ -106,14 +123,15 @@ export default function dashboard() {
           <div className="md:col-span-full">
             <div className="border p-6 rounded-lg w-full">
               <div className="flex items-center space-x-4">
-                <div className="flex flex-row justify-between items-center w-full">
+                <div className="flex flex-col space-y-3 md:flex-row justify-between items-center w-full">
                   <div className="flex flex-col">
-                    <h2 className="text-3xl font-bold">{user?.displayName}</h2>
+                    <h2 className="text-xl lg:text-3xl font-bold">{user?.displayName}</h2>
                     <p className="text-orange-400">{user?.email}</p>
                   </div>
                   <Button
                     variant={"outline"}
                     className="rounded-md hover:bg-orange-600"
+                    onClick={updateProfile}
                   >
                     <Settings2 />
                     Update
@@ -166,7 +184,7 @@ export default function dashboard() {
                     <Separator className="my-5" />
                   </div>
                 ))}
-                </ScrollArea>
+              </ScrollArea>
             </div>
 
             <div className="border p-6 rounded-lg">
