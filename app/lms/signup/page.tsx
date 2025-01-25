@@ -32,7 +32,7 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@radix-ui/react-separator";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/app/_context/AuthContext";
 
 export default function signup() {
   const { register } = useAuthContext();

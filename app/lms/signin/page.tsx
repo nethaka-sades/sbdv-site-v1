@@ -30,7 +30,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/app/_context/AuthContext";
 
 export default function signin() {
   const { login } = useAuthContext(); // Access login function from context
