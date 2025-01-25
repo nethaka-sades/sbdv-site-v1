@@ -47,24 +47,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useAuthContext } from "@/app/_context/AuthContext";
-import profileDropDown from "./UserNav";
 import Hero from "./hero";
-import UserNav from "./UserNav";
+import { ThemeSwitcher } from "./theme-switcher";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
     {
       title: "Extra-Curricular Activites",
       href: "/extra",
-      description:
-        "More than a educational institute",
+      description: "More than a educational institute",
     },
     {
       title: "Resources",
       href: "/resources",
-      description:
-        "Past Papers and Textbooks",
+      description: "Past Papers and Textbooks",
     },
   ];
 
@@ -84,7 +80,6 @@ const pg_components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { user } = useAuthContext();
 
   return (
     <header className="font-normal sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -130,7 +125,10 @@ export function Navbar() {
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/about_bellanvila_temple" title="Bellanvila Temple">
+                      <ListItem
+                        href="/about_bellanvila_temple"
+                        title="Bellanvila Temple"
+                      >
                         Introduction to Bellanvila Temple.
                       </ListItem>
                       <ListItem href="/administration" title="Administration">
@@ -184,20 +182,15 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          {!user?.email ? (
-            <Link href={"/lms"}>
-              <Button
-                variant="outline"
-                className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
-              >
-                Access LMS
-              </Button>
-            </Link>
-          ) : (
-            <div className="hidden md:inline-flex mr-8">
-              <UserNav></UserNav>
-            </div>
-          )}
+          <ThemeSwitcher />
+          <Link href={"/lms"}>
+            <Button
+              variant="outline"
+              className="hidden md:inline-flex rounded text-orange-500 hover:text-slate-100 mr-8"
+            >
+              Access LMS
+            </Button>
+          </Link>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -287,7 +280,6 @@ export function Navbar() {
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                {!user?.email ? (
                   <Link href={"/lms"} passHref>
                     <Button
                       variant="outline"
@@ -299,19 +291,6 @@ export function Navbar() {
                       Access LMS
                     </Button>
                   </Link>
-                ) : (
-                  <Link href={"/lms/dashboard"} passHref>
-                    <Button
-                      variant="outline"
-                      className="rounded text-orange-600 text-sm w-full"
-                      onClick={(e) => {
-                        setIsOpen(false);
-                      }}
-                    >
-                      Visit Dashboard
-                    </Button>
-                  </Link>
-                )}
               </div>
             </SheetContent>
           </Sheet>
