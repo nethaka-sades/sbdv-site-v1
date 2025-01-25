@@ -20,18 +20,22 @@
  *  Created on Sat Nov 23 2024
  *
  */
-
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "@/components/footer";
-import { AuthContextProvider } from "./_context/AuthContext";
-import LoadingScreen from "@/components/LoadingScreen";
 
+const defaultUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
+// metadata
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  metadataBase: new URL(defaultUrl),
+  title: "Sri Bodhiraja Dhamma School",
+  description: "Official Web Portal of Sri Bodhiraja Dhamma School",
+};
+
+//fonts
+import localFont from "next/font/local";
 const aclonica = localFont({
   src: "./fonts/Aclonica-Regular.woff2",
   variable: "--font-aclonica",
@@ -43,10 +47,17 @@ const alatsi = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Sri Bodhiraja Dhamma School",
-  description: "Official Web Portal of Sri Bodhiraja Dhamma School",
-};
+// vercel analytics and speed insights
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+import { AuthContextProvider } from "./_context/AuthContext";
+import { ThemeProvider } from "@/components/theme-provider";
+
+import { Navbar } from "@/components/navbar";
+import Footer from "@/components/footer";
+
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function RootLayout({
   children,
@@ -72,8 +83,12 @@ export default function RootLayout({
       </head>
 
       <body className="antialiased">
-        <AuthContextProvider>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             <Navbar />
             <LoadingScreen />
             {children}
@@ -81,7 +96,6 @@ export default function RootLayout({
           </ThemeProvider>
           <Analytics />
           <SpeedInsights />
-        </AuthContextProvider>
       </body>
     </html>
   );
