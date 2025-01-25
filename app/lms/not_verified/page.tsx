@@ -23,8 +23,8 @@
 
 "use client";
 
-import { useAuthContext } from "@/app/context/AuthContext";
-import AuthGuard from "@/app/context/AuthGuard";
+import { useAuthContext } from "@/app/_context/AuthContext";
+import AuthGuard from "@/app/_context/AuthGuard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
