@@ -8,6 +8,9 @@ export default {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		container: {
+			padding: '0px', // Set the desired padding value here
+		  },
 		extend: {
 			borderRadius: {
 				lg: 'var(--radius)',
