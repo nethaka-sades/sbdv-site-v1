@@ -12,7 +12,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/app/_context/AuthContext";
 import { useRouter } from "next/navigation";
 
 export default function UserNav() {

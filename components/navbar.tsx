@@ -47,7 +47,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useAuthContext } from "@/app/context/AuthContext";
+import { useAuthContext } from "@/app/_context/AuthContext";
 import profileDropDown from "./UserNav";
 import Hero from "./hero";
 import UserNav from "./UserNav";
