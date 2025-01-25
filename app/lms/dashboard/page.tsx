@@ -22,16 +22,35 @@
  */
 
 "use client";
-import { useAuthContext } from "@/app/context/AuthContext";
-import AuthGuard from "@/app/context/AuthGuard";
+import { useAuthContext } from "@/app/_context/AuthContext";
+import AuthGuard from "@/app/_context/AuthGuard";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LogOut, Settings2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import firebase_app from "@/firebase/config";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+} from "@firebase/firestore";
+import { signOut } from "@firebase/auth";
+
+const db = getFirestore(firebase_app);
+
+type Notice = {
+  id: string;
+  title: string;
+  message: string;
+  createdAt: { seconds: number; nanoseconds: number }; // Firestore's Timestamp format
+};
+
 
 export default function dashboard() {
   const { logout } = useAuthContext();
@@ -39,6 +58,27 @@ export default function dashboard() {
   const { user } = useAuthContext();
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
+  const [notices, setNotices] = useState<Notice[]>([]);
+  const [noticesRrrorMessage, setNoticesErrorMessage] = useState("");
+
+  useEffect(() => {
+    // Fetch notices from Firestore
+    const fetchNotices = async () => {
+      try {
+        const noticesCollection = collection(db, "notices");
+        const noticeDocs = await getDocs(noticesCollection);
+        const fetchedNotices = noticeDocs.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Notice[];
+        setNotices(fetchedNotices);
+      } catch (error) {
+        setNoticesErrorMessage("Error Fetching Notices");
+      }
+    };
+
+    fetchNotices();
+  }, []);
 
   const signout = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -57,52 +97,18 @@ export default function dashboard() {
     router.push("/lms/dashboard/update_profile");
   };
 
-  const notices = [
-    {
-      id: "1",
-      title: "Shadcn UI Kit Application UI v2.0.0",
-      date: "January 13th, 2022",
-      description:
-        "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
-    },
-    {
-      id: "2",
-      title: "Shadcn UI Kit Figma v1.3.0",
-      date: "December 7th, 2021",
-      description:
-        "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
-    {
-      id: "3",
-      title: "Shadcn UI Kit Figma v1.3.0",
-      date: "December 7th, 2021",
-      description:
-        "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
-    {
-      id: "4",
-      title: "Shadcn UI Kit Figma v1.3.0",
-      date: "December 7th, 2021",
-      description:
-        "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
-    {
-      id: "5",
-      title: "Shadcn UI Kit Figma v1.3.0",
-      date: "December 7th, 2021",
-      description:
-        "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
-  ];
-
   return (
+    <AuthGuard>
     <main className="text-white min-h-screen">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row justify-between space-y-5 items-center mb-8">
-          <h1 className="text-3xl lg:text-5xl font-bold font-special ">Welcome</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold font-special ">
+            Welcome
+          </h1>
           <Button
             variant={"outline"}
             className="rounded-md border-red-600 hover:bg-red-600"
+            onClick={signout}
           >
             <LogOut />
             Logout
@@ -116,7 +122,9 @@ export default function dashboard() {
               <div className="flex items-center space-x-4">
                 <div className="flex flex-col space-y-3 md:flex-row justify-between items-center w-full">
                   <div className="flex flex-col">
-                    <h2 className="text-xl lg:text-3xl font-bold">{user?.displayName}</h2>
+                    <h2 className="text-xl lg:text-3xl font-bold">
+                      {user?.displayName}
+                    </h2>
                     <p className="text-orange-400">{user?.email}</p>
                   </div>
                   <Button
@@ -165,16 +173,22 @@ export default function dashboard() {
             <div className="border p-6 rounded-lg">
               <h3 className="text-3xl font-bold mb-4">Notices</h3>
               <ScrollArea className="h-32">
-                {notices.map((activity) => (
-                  <div key={activity.id}>
-                    <div>
-                      <h4 className="font-semibold">{activity.title}</h4>
-                      <p className="text-gray-400 text-sm">{activity.date}</p>
-                      <p className="text-sm mt-1">{activity.description}</p>
+                {notices.length === 0 ? (
+                  <p>No notices found.</p>
+                ) : (
+                  notices.map((notice) => (
+                    <div key={notice.id}>
+                      <div>
+                        <h4 className="font-semibold">{notice.title}</h4>
+                        <p className="text-gray-400 text-sm">
+                        {new Date(notice.createdAt.seconds * 1000).toLocaleDateString()}
+                        </p>
+                        <p className="text-sm mt-1">{notice.message}</p>
+                      </div>
+                      <Separator className="my-5" />
                     </div>
-                    <Separator className="my-5" />
-                  </div>
-                ))}
+                  ))
+                )}
               </ScrollArea>
             </div>
 
@@ -192,5 +206,6 @@ export default function dashboard() {
         </div>
       </div>
     </main>
+    </AuthGuard>
   );
 }
