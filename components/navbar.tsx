@@ -56,13 +56,13 @@ const more_components: { title: string; href: string; description: string }[] =
   [
     {
       title: "Extra-Curricular Activites",
-      href: "/more/ec_acts",
+      href: "/extra",
       description:
         "More than a educational institute",
     },
     {
       title: "Resources",
-      href: "/more/more_res",
+      href: "/resources",
       description:
         "Past Papers and Textbooks",
     },
@@ -71,13 +71,13 @@ const more_components: { title: string; href: string; description: string }[] =
 const pg_components: { title: string; href: string; description: string }[] = [
   {
     title: "Board of Officials 2024/25",
-    href: "/pg",
+    href: "/board_of_officials",
     description:
       "Board of Officials of Sri Bodhiraja Dhamma School's Prefects Guild.",
   },
   {
     title: "History",
-    href: "/pg/pg_history",
+    href: "/history_of_prefects",
     description: "Unfold the Legacy.",
   },
 ];
@@ -113,7 +113,7 @@ export function Navbar() {
                         <NavigationMenuLink asChild>
                           <Link
                             className="flex h-full w-full select-none flex-col text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/about"
+                            href="/about_dp"
                           >
                             <Image
                               src={logo_only}
@@ -130,14 +130,14 @@ export function Navbar() {
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/about/bt" title="Bellanvila Temple">
+                      <ListItem href="/about_bellanvila_temple" title="Bellanvila Temple">
                         Introduction to Bellanvila Temple.
                       </ListItem>
-                      <ListItem href="/about/admin" title="Administration">
+                      <ListItem href="/administration" title="Administration">
                         Structure and Administration of Sri Bodhiraja Dhamma
                         School.
                       </ListItem>
-                      <ListItem href="/about/teachers" title="Teaching Panel">
+                      <ListItem href="/teaching_panel" title="Teaching Panel">
                         Our Resource Persons, Our Guide.
                       </ListItem>
                     </ul>
@@ -223,28 +223,28 @@ export function Navbar() {
                     About
                   </MobileLink>
                   <MobileLink
-                    href="/about/bt"
+                    href="/about_bellanvila_temple"
                     onOpenChange={setIsOpen}
                     className="ml-6 text-slate-500"
                   >
                     Bellanvila Temple
                   </MobileLink>
                   <MobileLink
-                    href="/about"
+                    href="/about_dp"
                     onOpenChange={setIsOpen}
                     className="ml-6 text-slate-500"
                   >
                     Sri Bodhiraja Dhamma School
                   </MobileLink>
                   <MobileLink
-                    href="/about/administration"
+                    href="/administration"
                     onOpenChange={setIsOpen}
                     className="ml-6 text-slate-500"
                   >
                     Administration
                   </MobileLink>
                   <MobileLink
-                    href="/about/teachers"
+                    href="/teaching_panel"
                     onOpenChange={setIsOpen}
                     className="ml-6 text-slate-500"
                   >
@@ -254,14 +254,14 @@ export function Navbar() {
                     Prefects Guild
                   </MobileLink>
                   <MobileLink
-                    href="/pg"
+                    href="/board_of_officials"
                     onOpenChange={setIsOpen}
                     className="ml-8 text-slate-500"
                   >
                     Board of Officials 2024/25
                   </MobileLink>
                   <MobileLink
-                    href="/pg/pg_history"
+                    href="/history_of_prefects"
                     onOpenChange={setIsOpen}
                     className="ml-8 text-slate-500"
                   >
@@ -271,14 +271,14 @@ export function Navbar() {
                     More
                   </MobileLink>
                   <MobileLink
-                    href="/more/ec_acts"
+                    href="/extra"
                     onOpenChange={setIsOpen}
                     className="ml-8 text-slate-500"
                   >
                     Extra-Curricular Activities
                   </MobileLink>
                   <MobileLink
-                    href="/more/more_res"
+                    href="/resources"
                     onOpenChange={setIsOpen}
                     className="ml-8 text-slate-500"
                   >
