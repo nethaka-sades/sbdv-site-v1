@@ -113,22 +113,100 @@ export default function teachers() {
             <p className="text-center text-muted-foreground">Principle</p>
           </div>
 
-          <div className="container mt-16 grid gap-x-8 gap-y-16 grid-cols-2 lg:grid-cols-6">
-            {people.map((person) => (
-              <div key={person.id} className="flex flex-col items-center">
-                <Avatar className="mb-4 size-16 border md:mb-5 lg:size-24">
-                  <AvatarImage src={person.avatar} />
-                  <AvatarFallback>{person.name}</AvatarFallback>
-                </Avatar>
-                <p className="text-sm text-center font-medium">{person.name}</p>
-                <p className="text-sm text-center text-muted-foreground">
-                  {person.role}
-                </p>
-              </div>
-            ))}
+          <div className="mt-12 md:mt-20 w-full">
+            <ul className="divide-y divide-border border-y border-border">
+              <li className="group">
+                <div className="flex items-center py-6">
+                  <div>
+                    <div className="font-medium md:text-4xl font-special">
+                      Senior Section
+                    </div>
+                    <div className="flex flex-row space-x-5 max-w-full">
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className="group">
+                <div className="flex items-center py-6">
+                  <div>
+                    <div className="font-medium md:text-4xl font-special">
+                      Junior Section
+                    </div>
+                    <div className="flex flex-row space-x-5 max-w-full">
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                      <div className="text-md text-muted-foreground md:mt-1 md:text-md font-plain">Prof. Wasantha Mendis</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
     </div>
   );
 }
+
+/*
+Ven Bellanvila Sangarathana Thera 
+Ven Wagawatte Wimalawansha Thera
+Ven Thalawe Panchcharansi Thera
+Ven Okkampitiye Vidyananda Thera
+Ven Balangoda Ananda Thera
+Ven Shanthabadra Thera
+
+Mrs. U.K.K. Gunasekara
+Mrs. G. Siriyawathi
+Prof. Wasantha Mendis
+Mrs. Inoka Thushari
+Mr. K. Jayananda
+Mr. Channa Deshapriya
+Mrs. A. Priyalatha
+Mrs. Kema Nanayakkara
+Mrs. P. Suneetha
+Mrs. Padmini Vitharana
+Mrs. D. Shamali Samarathunga
+Mr. Idunil Udesh
+
+Mrs. Jayawathi Ariyarathna
+Mrs. Senani Dilrukshi
+Mrs. Anoma Udeni
+Mrs. Suvinitha Perera
+Mr. Supun Chandu Akalanka
+Mrs. Ruvini Lasantha
+Mr. Shamil Samarasinghe
+Mrs. K. Sunethra
+Mrs. Sachini Buddhika
+Mrs. Viduranshi Sajeewani
+Mrs. Bimalka Vidarshani
+Mrs. Deepthika Nilmini
+Miss. Thilini Puurnima
+Mrs. Nadeeka Chathurani
+Mrs. Maheesha Nadee
+Miss. Inoli Prathiba
+Miss. Anurada Perera
+Mrs. K. Kumuduni
+Mrs. Kanthi Wijerathna
+Mrs. Jesmine Vikramathilaka
+Mrs. Somalatha Mahawewa
+Miss. Supuni Udeshika
+Miss. Bavani Thisanka
+Mrs. Ruvangi Murage
+Mrs. S. Pahalawanniarachchi
+Mrs. Chathumini Murage
+Mrs. Imali Fernando
+Mrs. Chandrika Subashini
+Mrs. Suseema Chathurani
+Mrs. Thilanka Sudarshani
+Mrs. Champika Deepthi
+Miss. J. Samanthi
+Mrs. Ishani Pathirana
+Mrs. Keshala Ruwanmali
+Mrs. Nalini Abesinghe
+Mrs. Yomal Malitha
+Mrs. Nilushika Madushani
+*/
