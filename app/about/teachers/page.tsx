@@ -93,7 +93,13 @@ export default function teachers() {
               with modern teaching methods to create an engaging and supportive
               learning environment. Together, they inspire the next generation
               to embrace the principles of Dhamma and contribute positively to
-              society.
+              society. These teachers not only educate students on Buddhist
+              doctrines but also inspire them to apply these values in their
+              daily lives. Dhamma school teachers often go beyond academics,
+              fostering a sense of community and encouraging students to grow
+              into compassionate and responsible individuals. Their contribution
+              is invaluable in preserving and passing down the timeless wisdom
+              of Buddhism to future generations.
             </p>
           </div>
           <div key="1" className="flex flex-col items-center pt-10">
