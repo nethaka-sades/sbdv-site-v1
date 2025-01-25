@@ -58,25 +58,13 @@ const more_components: { title: string; href: string; description: string }[] =
       title: "Extra-Curricular Activites",
       href: "/more/ec_acts",
       description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+        "More than a educational institute",
     },
     {
       title: "Resources",
       href: "/more/more_res",
       description:
-        "For sighted users to preview content available behind a link.",
-    },
-    {
-      title: "Gallery",
-      href: "/more/more_res",
-      description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    },
-    {
-      title: "About LMS",
-      href: "/more/about_lms",
-      description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        "Past Papers and Textbooks",
     },
   ];
 
@@ -295,20 +283,6 @@ export function Navbar() {
                     className="ml-8 text-slate-500"
                   >
                     Resources
-                  </MobileLink>
-                  <MobileLink
-                    href="/more/gallery"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
-                    Gallery
-                  </MobileLink>
-                  <MobileLink
-                    href="/more/about_lms"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
-                    About LMS
                   </MobileLink>
                 </div>
               </div>
