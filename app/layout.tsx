@@ -51,7 +51,6 @@ const alatsi = localFont({
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { AuthContextProvider } from "./_context/AuthContext";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { Navbar } from "@/components/navbar";
@@ -85,7 +84,7 @@ export default function RootLayout({
       <body className="antialiased">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
