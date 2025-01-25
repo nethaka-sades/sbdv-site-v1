@@ -29,7 +29,7 @@ import { Navbar } from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "./_context/AuthContext";
 import LoadingScreen from "@/components/LoadingScreen";
 
 const aclonica = localFont({
