@@ -49,6 +49,7 @@ import {
 } from "@/components/ui/sheet";
 import Hero from "./hero";
 import { ThemeSwitcher } from "./theme-switcher";
+import AuthButton from "./HeaderAuth";
 
 const more_components: { title: string; href: string; description: string }[] =
   [
@@ -78,7 +79,7 @@ const pg_components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function Navbar() {
+export function Navbar({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -181,8 +182,10 @@ export function Navbar() {
             </NavigationMenu>
           </nav>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mr-5">
           <ThemeSwitcher />
+          {children}
+          {/*
           <Link href={"/lms"}>
             <Button
               variant="outline"
@@ -191,6 +194,7 @@ export function Navbar() {
               Access LMS
             </Button>
           </Link>
+          */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -280,17 +284,17 @@ export function Navbar() {
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                  <Link href={"/lms"} passHref>
-                    <Button
-                      variant="outline"
-                      className="rounded text-orange-500 w-full"
-                      onClick={(e) => {
-                        setIsOpen(false);
-                      }}
-                    >
-                      Access LMS
-                    </Button>
-                  </Link>
+                <Link href={"/lms"} passHref>
+                  <Button
+                    variant="outline"
+                    className="rounded text-orange-500 w-full"
+                    onClick={(e) => {
+                      setIsOpen(false);
+                    }}
+                  >
+                    Access LMS
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

@@ -57,6 +57,7 @@ import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 
 import LoadingScreen from "@/components/LoadingScreen";
+import AuthButton from "@/components/HeaderAuth";
 
 export default function RootLayout({
   children,
@@ -88,7 +89,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
+            <Navbar><AuthButton /></Navbar>
             <LoadingScreen />
             {children}
             <Footer />
