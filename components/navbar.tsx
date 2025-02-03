@@ -183,7 +183,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
         <div className="flex items-center space-x-4 mr-5">
-          <ThemeSwitcher />
+          {/*<ThemeSwitcher />*/}
           {children}
           {/*
           <Link href={"/lms"}>
