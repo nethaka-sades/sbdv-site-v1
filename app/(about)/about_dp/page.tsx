@@ -185,8 +185,6 @@ export default function Aboutdp() {
           </div>
         </section>
 
-        <PrinciplesStrip />
-
         <section className="pb-3 px-20">
           <div className="container">
             <div className="grid items-center gap-5 lg:grid-cols-2">
