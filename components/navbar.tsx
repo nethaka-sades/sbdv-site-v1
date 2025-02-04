@@ -59,25 +59,11 @@ const more_components: { title: string; href: string; description: string }[] =
       description: "More than a educational institute",
     },
     {
-      title: "Resources",
-      href: "/resources",
-      description: "Past Papers and Textbooks",
+      title: "Prefects Guild",
+      href: "/prefects_guild",
+      description: "Sri Bodhiraja Dhamma School's Prefects Guild.",
     },
   ];
-
-const pg_components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Board of Officials 2024/25",
-    href: "/board_of_officials",
-    description:
-      "Board of Officials of Sri Bodhiraja Dhamma School's Prefects Guild.",
-  },
-  {
-    title: "History",
-    href: "/history_of_prefects",
-    description: "Unfold the Legacy.",
-  },
-];
 
 export function Navbar({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -96,7 +82,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
           </Link>
         </div>
         <div className="flex flex-1 items-center ml-8 space-x-2">
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <nav className="hidden sm:flex items-center space-x-6 text-sm font-medium">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -144,24 +130,6 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
-                    Prefects Guild
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                      {pg_components.map((pg_component) => (
-                        <ListItem
-                          key={pg_component.title}
-                          title={pg_component.title}
-                          href={pg_component.href}
-                        >
-                          {pg_component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
                     More
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -183,8 +151,16 @@ export function Navbar({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
         <div className="flex items-center space-x-4 mr-5">
+          <Button
+            asChild
+            size="sm"
+            variant={"outline"}
+            className="hidden sm:flex rounded text-orange-500 w-full"
+          >
+            <Link href="/learning_materials">Learning Materials</Link>
+          </Button>
           {/*<ThemeSwitcher />*/}
-          {children}
+          <div className="hidden sm:flex">{children}</div>
           {/*
           <Link href={"/lms"}>
             <Button
@@ -199,7 +175,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+                className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 sm:hidden"
               >
                 <Menu className="h-5 w-5 mr-8" />
                 <span className="sr-only">Toggle Menu</span>
@@ -247,45 +223,29 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                   >
                     Teaching Panal
                   </MobileLink>
-                  <MobileLink href="" onOpenChange={setIsOpen}>
+                  <MobileLink href="/prefects_guild" onOpenChange={setIsOpen}>
                     Prefects Guild
                   </MobileLink>
-                  <MobileLink
-                    href="/board_of_officials"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
-                    Board of Officials 2024/25
-                  </MobileLink>
-                  <MobileLink
-                    href="/history_of_prefects"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
-                    Our Legacy
-                  </MobileLink>
-                  <MobileLink href="" onOpenChange={setIsOpen}>
-                    More
-                  </MobileLink>
-                  <MobileLink
-                    href="/extra"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
+                  <MobileLink href="/extra" onOpenChange={setIsOpen}>
                     Extra-Curricular Activities
-                  </MobileLink>
-                  <MobileLink
-                    href="/resources"
-                    onOpenChange={setIsOpen}
-                    className="ml-8 text-slate-500"
-                  >
-                    Resources
                   </MobileLink>
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                <Link href={"/lms"} passHref>
+                <Button
+                  asChild
+                  size="sm"
+                  variant={"outline"}
+                  className="rounded text-orange-500 w-full mb-2"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                  }}
+                >
+                  <Link href="/learning_materials">Learning Materials</Link>
+                </Button>
+                <Link href={"/lms_access"} passHref>
                   <Button
+                    size={"sm"}
                     variant="outline"
                     className="rounded text-orange-500 w-full"
                     onClick={(e) => {
