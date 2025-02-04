@@ -4,19 +4,12 @@ on:
   schedule:
     - cron: '0 9 * * 1,4' # Runs at 9:00 AM every Monday and Thursday
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      environment:
-        description: 'Environment to deploy'
-        required: false
-        default: 'staging'
-
+  
 jobs:
-  ping-supabase:
+ ping-supabase:
     runs-on: ubuntu-latest
     steps:
-      - name: Send request to Supabase
-        run: curl -s "https://https://dbcaedilyjrhaiqkcpfw.supabase.co/rest/v1/notices"
+      - name: Ping Supabase
+        run: |
+          curl -X GET 'https://dbcaedilyjrhaiqkcpfw.supabase.co/rest/v1/' \
+          -H "apikey: ${{ secrets.SUPABASE_API_KEY }}"
