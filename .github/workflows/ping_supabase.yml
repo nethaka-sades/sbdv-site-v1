@@ -2,7 +2,17 @@ name: Ping Supabase to Prevent Pausing
 
 on:
   schedule:
-    - cron: '13 9 * * 2' # Runs at 9:00 AM every Monday and Thursday '0 9 * * 1,4'
+    - cron: '0 9 * * 1,4' # Runs at 9:00 AM every Monday and Thursday
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      environment:
+        description: 'Environment to deploy'
+        required: false
+        default: 'staging'
 
 jobs:
   ping-supabase:
