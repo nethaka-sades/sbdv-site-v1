@@ -5,15 +5,6 @@ import { redirect } from "next/navigation";
 import { signOutAction } from "../actions";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
