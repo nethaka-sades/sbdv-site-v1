@@ -243,18 +243,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                 >
                   <Link href="/learning_materials">Learning Materials</Link>
                 </Button>
-                <Link href={"/lms_access"} passHref>
-                  <Button
-                    size={"sm"}
-                    variant="outline"
-                    className="rounded text-orange-500 w-full"
-                    onClick={(e) => {
-                      setIsOpen(false);
-                    }}
-                  >
-                    Access LMS
-                  </Button>
-                </Link>
+                  {children}
               </div>
             </SheetContent>
           </Sheet>
