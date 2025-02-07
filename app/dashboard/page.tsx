@@ -57,7 +57,6 @@ export default async function DashboardPage() {
     .select("*")
     .order("created_at", { ascending: false }); // Order by creation time, newest first
 
-  console.log(notices?.length);
 
   if (notices_error) {
     console.log(notices_error);
