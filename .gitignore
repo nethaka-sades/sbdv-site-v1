@@ -42,3 +42,5 @@ next-env.d.ts
 site plan.md
 
 .env.local
+
+sbdv-site-v1.code-workspace

@@ -52,7 +52,7 @@ export default function Hero() {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push("/about"); // Replace with your desired route
+    router.push("/about_dp"); // Replace with your desired route
   };
 
   return (

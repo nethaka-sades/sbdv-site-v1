@@ -30,26 +30,24 @@ const sections = [
   {
     title: 'About',
     links: [
-      { name: 'Sri Bodhiraja Dhamma School', href: '/about' },
-      { name: 'Bellanvila Temple', href: '/about/bt' },
-      { name: 'Administration', href: '/about/administration' },
-      { name: 'Teaching Panel', href: '/about/teachers' },
+      { name: 'Sri Bodhiraja Dhamma School', href: '/about_dp' },
+      { name: 'Bellanvila Temple', href: '/about_bellanvila_temple' },
+      { name: 'Administration', href: '/administration' },
+      { name: 'Teaching Panel', href: '/teaching_panel' },
     ],
   },
   {
     title: 'Prefects Guild',
     links: [
-      { name: 'Board of Officials 2024/25', href: '/pg' },
-      { name: 'History', href: '/pg/pg_history' },
+      { name: 'Board of Officials 2024/25', href: '/board_of_officials' },
+      { name: 'History', href: '/history_of_prefects' },
     ],
   },
   {
     title: 'More',
     links: [
-      { name: 'Extra-Curricular Activities', href: '/more/ec_acts' },
-      { name: 'Resources', href: '/more/more_res' },
-      { name: 'Gallery', href: '/more/gallary' },
-      { name: 'About LMS', href: '/more/about_lms' },
+      { name: 'Extra-Curricular Activities', href: '/extra' },
+      { name: 'Resources', href: '/resources' },
     ],
   },
 ];
