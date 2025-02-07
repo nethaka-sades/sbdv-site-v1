@@ -41,14 +41,14 @@ import imageb from "@/public/images/p6.webp";
 export default function Lms() {
 
   return (
-      <main className="h-dvh">
+      <main className="min-h-screen">
         <section className="pt-24 lg:pt-32">
-          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-10"></div>
           <Image
             src={imageb}
             alt="bg-img-1"
             fill
-            className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
+            className="object-cover overflow-hidden blur-sm -z-20 opacity-5"
           />
           <div className="container flex flex-col items-center text-center">
             <p className="text-muted-foreground font-plain text-sm md:text-md">
