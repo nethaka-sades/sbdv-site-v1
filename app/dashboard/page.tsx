@@ -1,12 +1,33 @@
+/*
+ *  
+ *   Copyright 2025 Nethaka De Saram
+ *  
+ *  Licensed under the Apache License, Version 2.0 (the 'License');
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *  
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *  
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an 'AS IS' BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *  
+ *  
+ *  
+ *  
+ *  Created on Sat Feb 08 2025
+ *  This file use original nextjs-supabase boilerplate repo code
+ */
+
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
-import { InfoIcon, LogOut, Settings2 } from "lucide-react";
+import { LogOut, Settings2 } from "lucide-react";
 import { redirect } from "next/navigation";
 import { signOutAction } from "../actions";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 
 export default async function DashboardPage() {
