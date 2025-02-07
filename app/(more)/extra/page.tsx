@@ -91,7 +91,7 @@ export default function ec_acts() {
                 Perahera, discovering talents and enhancing leadership skills.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Link href="/more/ec_acts/houses">
+                <Link href="/extra/houses">
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
@@ -128,7 +128,7 @@ export default function ec_acts() {
                 competitions.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Link href="/more/ec_acts/houses">
+                <Link href="/extra/houses">
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
