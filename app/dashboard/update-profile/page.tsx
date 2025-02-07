@@ -32,3 +32,9 @@
     }
   }
     */}
+
+export default function updateProfile(){
+  return(
+    <div>Hi</div>
+  );
+}
