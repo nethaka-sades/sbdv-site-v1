@@ -44,7 +44,7 @@ export default async function Signup(props: {
   }
 
   return (
-    <div className="py-32 min-h-screen">
+    <div className="py-32 px-10 min-h-screen">
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
       <Image
         src={imageb}

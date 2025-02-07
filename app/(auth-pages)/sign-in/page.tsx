@@ -33,7 +33,7 @@ import imageb from "@/public/images/p6.webp";
 export default async function Login(props: { searchParams: Promise<Message> }) {
   const searchParams = await props.searchParams;
   return (
-    <div className="py-32 min-h-screen">
+    <div className="py-32 px-10 min-h-screen">
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
         <Image
           src={imageb}
