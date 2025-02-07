@@ -1,22 +1,22 @@
 /*
- *  
+ *
  *   Copyright 2025 Nethaka De Saram
- *  
+ *
  *  Licensed under the Apache License, Version 2.0 (the 'License');
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- *  
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an 'AS IS' BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- *  
- *  
- *  
- *  
+ *
+ *
+ *
+ *
  *  Created on Sat Feb 08 2025
  *  This file use original nextjs-supabase boilerplate repo code
  */
@@ -29,6 +29,7 @@ import { signOutAction } from "../actions";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -57,7 +58,6 @@ export default async function DashboardPage() {
     .select("*")
     .order("created_at", { ascending: false }); // Order by creation time, newest first
 
-
   if (notices_error) {
     console.log(notices_error);
     throw error;
@@ -73,7 +73,7 @@ export default async function DashboardPage() {
     marks_data?.first_term == "-";
     marks_data?.second_term == "-";
     marks_data?.third_term == "-";
-  } else if (marks_data_error){
+  } else if (marks_data_error) {
     console.log(marks_data_error);
   }
 
@@ -106,13 +106,15 @@ export default async function DashboardPage() {
                     </h2>
                     <p className="text-orange-400">{user?.email}</p>
                   </div>
-                  <Button
-                    variant={"outline"}
-                    className="rounded-md hover:bg-orange-600"
-                  >
-                    <Settings2 />
-                    Update
-                  </Button>
+                  <Link href={"/dashboard/update-profile"}>
+                    <Button
+                      variant={"outline"}
+                      className="rounded-md hover:bg-orange-600"
+                    >
+                      <Settings2 />
+                      Update
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="flex flex-col pt-5 space-y-3 text-sm">
@@ -175,19 +177,27 @@ export default async function DashboardPage() {
           </div>
 
           <div className="border p-6 rounded-lg">
-            <h3 className="text-lg text-center lg:text-start lg:text-3xl font-bold mb-4">Your Exam Marksheet</h3>
+            <h3 className="text-lg text-center lg:text-start lg:text-3xl font-bold mb-4">
+              Your Exam Marksheet
+            </h3>
             <div className="mt-10 grid gap-x-5 gap-y-8 md:grid-cols-1 lg:grid-cols-3 text-center">
               <div className="flex flex-col gap-2 lg:border-r">
                 <p>First Term</p>
-                <div className="text-6xl font-bold">{marks_data?.first_term}</div>
+                <div className="text-6xl font-bold">
+                  {marks_data?.first_term}
+                </div>
               </div>
               <div className="flex flex-col gap-2 lg:border-r">
                 <p>Second Term</p>
-                <div className="text-6xl font-bold">{marks_data?.second_term}</div>
+                <div className="text-6xl font-bold">
+                  {marks_data?.second_term}
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <p>Third Term</p>
-                <div className="text-6xl font-bold">{marks_data?.third_term}</div>
+                <div className="text-6xl font-bold">
+                  {marks_data?.third_term}
+                </div>
               </div>
             </div>
           </div>

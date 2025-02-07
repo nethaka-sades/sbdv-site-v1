@@ -27,6 +27,7 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { log } from "console";
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
@@ -149,7 +150,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (!password || !confirmPassword) {
     encodedRedirect(
       "error",
-      "/dashboard/reset-password",
+      "/dashboard/update-profile",
       "Password and confirm password are required",
     );
   }
@@ -157,7 +158,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (password !== confirmPassword) {
     encodedRedirect(
       "error",
-      "/dashboard/reset-password",
+      "/dashboard/update-profile",
       "Passwords do not match",
     );
   }
@@ -169,12 +170,12 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (error) {
     encodedRedirect(
       "error",
-      "/dashboard/reset-password",
+      "/dashboard/update-profile",
       "Password update failed",
     );
   }
 
-  encodedRedirect("success", "/dashboard/reset-password", "Password updated");
+  encodedRedirect("success", "/dashboard/update-profile", "Password updated");
 };
 
 export const signOutAction = async () => {
@@ -183,3 +184,71 @@ export const signOutAction = async () => {
   return redirect("/sign-in");
 };
 
+export const getProfileAction = async () => {
+  const supabase = await createClient();
+  
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+  const { data: O_data, error: O_error,status: O_status } = await supabase
+    .from("profiles")
+    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
+    .eq("id", user?.id)
+    .single();
+
+  if (O_error && O_status !== 406) {
+    console.log(O_error);
+  }
+
+  return O_data;
+}
+
+
+export const updateProfileAction = async (formData: FormData) => {
+  const supabase = await createClient();
+
+  const full_name_n = formData.get("display_name") as string;
+  const address_n = formData.get("address") as string;
+  const phone_no_n = formData.get("phone_no") as string;
+  const whatsapp_no_n = formData.get("whatsapp_no") as string;
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const { data: O_data, error: O_error,status: O_status } = await supabase
+    .from("profiles")
+    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
+    .eq("id", user?.id)
+    .single();
+
+  if (O_error && O_status !== 406) {
+    encodedRedirect(
+      "error",
+      "/dashboard/update-profile",
+      "Profile Data update failed",
+    );
+  }
+
+  const { error } = await supabase.from("profiles").upsert({
+    id: user?.id as string,
+    full_name: full_name_n || O_data?.full_name,
+    admin_year: O_data?.admin_year,
+    admin_no: O_data?.admin_no,
+    address: address_n || O_data?.address,
+    phone_no: phone_no_n || O_data?.phone_no,
+    whatsapp_no: whatsapp_no_n || O_data?.whatsapp_no,
+    updated_at: new Date().toISOString(),
+  });
+
+  if (error) {
+    encodedRedirect(
+      "error",
+      "/dashboard/update-profile",
+      "Profile Data update failed",
+    );
+  }
+
+  encodedRedirect("success", "/dashboard/update-profile", "Profile updated");
+};
