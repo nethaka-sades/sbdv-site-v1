@@ -20,7 +20,7 @@
  *  Modified on Mon Feb 03 2025
  *  
  */
-
+'use client'
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -37,7 +37,9 @@ import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
 
+
 export default function Lms() {
+
   return (
       <main className="h-dvh">
         <section className="pt-24 lg:pt-32">
