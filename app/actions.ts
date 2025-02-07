@@ -8,6 +8,12 @@ import { redirect } from "next/navigation";
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
+  const full_name = formData.get("display_name")?.toString();
+  const admin_no = formData.get("admin_no")?.toString();
+  const admin_year = formData.get("admin_year")?.toString();
+  const address = formData.get("address")?.toString();
+  const phone_no = formData.get("phone_no")?.toString();
+  const whatsapp_no = formData.get("whatsapp_no")?.toString();
   const supabase = await createClient();
   const origin = (await headers()).get("origin");
 
@@ -19,7 +25,7 @@ export const signUpAction = async (formData: FormData) => {
     );
   }
 
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -27,14 +33,35 @@ export const signUpAction = async (formData: FormData) => {
     },
   });
 
+  if (data.user) {  // Check if signup was successful
+    const { error: profileError } = await supabase
+      .from('profiles')
+      .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false }]); // Use user.id!
+
+    if (profileError) {
+      console.error(profileError.code + ' Error creating profile: ', profileError);
+      await supabase.auth.signOut()
+      const { error: deleteError } = await supabase.auth.admin.deleteUser(data.user.id);
+
+      if (deleteError) {
+        console.error("Error deleting user:", deleteError);
+      }
+      return encodedRedirect("error", "/sign-up", profileError.message);
+    } else {
+      console.log('Profile created successfully!');
+    }
+  } else if (error) {
+    console.error('Sign-up error:', error);
+  }
+
   if (error) {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
   } else {
     return encodedRedirect(
       "success",
-      "/sign-up",
-      "Thanks for signing up! Please check your email for a verification link.",
+      "/dashboard",
+      "Success!",
     );
   }
 };
@@ -53,7 +80,7 @@ export const signInAction = async (formData: FormData) => {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
-  return redirect("/protected");
+  return redirect("/dashboard");
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
@@ -67,7 +94,7 @@ export const forgotPasswordAction = async (formData: FormData) => {
   }
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback?redirect_to=/protected/reset-password`,
+    redirectTo: `${origin}/auth/callback?redirect_to=/dashboard/reset-password`,
   });
 
   if (error) {
@@ -99,7 +126,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (!password || !confirmPassword) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/dashboard/reset-password",
       "Password and confirm password are required",
     );
   }
@@ -107,7 +134,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (password !== confirmPassword) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/dashboard/reset-password",
       "Passwords do not match",
     );
   }
@@ -119,12 +146,12 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (error) {
     encodedRedirect(
       "error",
-      "/protected/reset-password",
+      "/dashboard/reset-password",
       "Password update failed",
     );
   }
 
-  encodedRedirect("success", "/protected/reset-password", "Password updated");
+  encodedRedirect("success", "/dashboard/reset-password", "Password updated");
 };
 
 export const signOutAction = async () => {
@@ -132,3 +159,4 @@ export const signOutAction = async () => {
   await supabase.auth.signOut();
   return redirect("/sign-in");
 };
+
