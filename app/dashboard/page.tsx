@@ -69,9 +69,12 @@ export default async function DashboardPage() {
     .eq("id", user?.id)
     .single();
 
-  if (marks_data_error) {
+  if (marks_data_error?.code == "PGRST116") {
+    marks_data?.first_term == "-";
+    marks_data?.second_term == "-";
+    marks_data?.third_term == "-";
+  } else if (marks_data_error){
     console.log(marks_data_error);
-    throw error;
   }
 
   return (
@@ -176,15 +179,15 @@ export default async function DashboardPage() {
             <div className="mt-10 grid gap-x-5 gap-y-8 md:grid-cols-1 lg:grid-cols-3 text-center">
               <div className="flex flex-col gap-2 lg:border-r">
                 <p>First Term</p>
-                <div className="text-6xl font-bold">{marks_data.first_term}</div>
+                <div className="text-6xl font-bold">{marks_data?.first_term}</div>
               </div>
               <div className="flex flex-col gap-2 lg:border-r">
                 <p>Second Term</p>
-                <div className="text-6xl font-bold">{marks_data.second_term}</div>
+                <div className="text-6xl font-bold">{marks_data?.second_term}</div>
               </div>
               <div className="flex flex-col gap-2">
                 <p>Third Term</p>
-                <div className="text-6xl font-bold">{marks_data.third_term}</div>
+                <div className="text-6xl font-bold">{marks_data?.third_term}</div>
               </div>
             </div>
           </div>
