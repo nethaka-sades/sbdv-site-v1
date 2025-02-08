@@ -150,7 +150,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (!password || !confirmPassword) {
     encodedRedirect(
       "error",
-      "/dashboard/update-profile",
+      "/dashboard/reset-password",
       "Password and confirm password are required",
     );
   }
@@ -158,7 +158,7 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (password !== confirmPassword) {
     encodedRedirect(
       "error",
-      "/dashboard/update-profile",
+      "/dashboard/reset-password",
       "Passwords do not match",
     );
   }
@@ -170,12 +170,12 @@ export const resetPasswordAction = async (formData: FormData) => {
   if (error) {
     encodedRedirect(
       "error",
-      "/dashboard/update-profile",
+      "/dashboard/reset-password",
       "Password update failed",
     );
   }
 
-  encodedRedirect("success", "/dashboard/update-profile", "Password updated");
+  encodedRedirect("success", "/dashboard/reset-password", "Password updated");
 };
 
 export const signOutAction = async () => {
