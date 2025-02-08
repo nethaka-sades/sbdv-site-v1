@@ -23,6 +23,7 @@
 
 import Image from "next/image";
 import bg_pic from "@/public/images/p8.webp";
+import st_pic from "@/public/images/dp-admin-structure.png";
 
 export default function admin() {
   return (
@@ -34,7 +35,7 @@ export default function admin() {
         fill
         className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
       />
-      <section className="pt-32 px-10">
+      <section className="pt-32 px-10 min-h-screen">
         <div className="container flex flex-col items-center text-center">
           <h2 className="my-5 text-orange-600 text-pretty text-2xl font-special font-bold lg:text-7xl">
             Administration
@@ -53,6 +54,14 @@ export default function admin() {
             to shaping the future of young learners with wisdom and compassion.
           </p>
         </div>
+      </section>
+
+      <section>
+      <Image
+        src={st_pic}
+        alt="bg-img-1"
+        className="5"
+      />
       </section>
     </main>
   );
