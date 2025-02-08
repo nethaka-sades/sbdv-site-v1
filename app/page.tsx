@@ -24,7 +24,6 @@
 import Hero from "@/components/hero";
 
 export default function Home() {
-  console.log("Firebase Measurement ID:", process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID);
   return (
     <div>
       <main className="">
