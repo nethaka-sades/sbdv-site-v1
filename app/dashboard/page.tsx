@@ -25,7 +25,7 @@ import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import { LogOut, Settings2 } from "lucide-react";
 import { redirect } from "next/navigation";
-import { signOutAction } from "../actions";
+import { signOutAction } from "@/app/actions";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { Separator } from "@/components/ui/separator";
