@@ -44,13 +44,17 @@ export default async function DashboardPage() {
 
   const { data, error, status } = await supabase
     .from("profiles")
-    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
+    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified`)
     .eq("id", user?.id)
     .single();
 
   if (error && status !== 406) {
     console.log(error);
     throw error;
+  }
+
+  if(!data?.verified){
+    return redirect("/dashboard/verification");
   }
 
   const { data: notices, error: notices_error } = await supabase
