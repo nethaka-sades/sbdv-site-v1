@@ -30,6 +30,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -83,6 +84,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="text-white min-h-screen">
+      <LoadingScreen />
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row justify-between space-y-5 items-center mb-8">
           <h1 className="text-3xl lg:text-5xl font-bold font-special ">

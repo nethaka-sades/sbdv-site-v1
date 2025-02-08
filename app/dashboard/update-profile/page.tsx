@@ -22,6 +22,7 @@
  */
 import { resetPasswordAction, updateProfileAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
+import LoadingScreen from "@/components/LoadingScreen";
 import { SubmitButton } from "@/components/submit-button";
 import { Button } from "@/components/ui/button";
 import {
@@ -69,6 +70,7 @@ export default async function UpdateProfile(props: {
 
   return (
     <main className="min-h-screen px-20 py-20 lg:max-w-2xl mx-auto">
+      <LoadingScreen />
       <Link href={"/dashboard"}>
         <Button className="text-primary-foreground my-2" variant="link">
           <ArrowLeft />

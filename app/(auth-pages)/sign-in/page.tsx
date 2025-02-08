@@ -29,11 +29,13 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default async function Login(props: { searchParams: Promise<Message> }) {
   const searchParams = await props.searchParams;
   return (
     <div className="py-32 px-10 min-h-screen">
+      <LoadingScreen />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
         <Image
           src={imageb}

@@ -22,6 +22,7 @@
  */
 
 import { signOutAction } from "@/app/actions";
+import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -29,6 +30,7 @@ export default function verification() {
 
   return (
     <div className="flex flex-col space-y-3 items-center justify-center h-screen text-center px-10">
+      <LoadingScreen />
       <h1 className="text-2xl font-bold text-red-600 mb-4">
         Please Wait, You're in the waitlist
       </h1>

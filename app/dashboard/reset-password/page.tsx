@@ -23,6 +23,7 @@
 
 import { resetPasswordAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
+import LoadingScreen from "@/components/LoadingScreen";
 import { SubmitButton } from "@/components/submit-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,6 +37,7 @@ export default async function ResetPassword(props: {
   const searchParams = await props.searchParams;
   return (
     <main className="max-w-lg mx-auto py-20 px-20 min-h-screen">
+      <LoadingScreen />
       <Link href={"/dashboard"}>
         <Button className="text-primary-foreground my-2" variant="link">
           <ArrowLeft />

@@ -21,6 +21,7 @@
  *  
  */
 import { signOutAction } from "@/app/actions";
+import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 
@@ -28,6 +29,7 @@ export default function verification() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center px-10">
+      <LoadingScreen />
       <h1 className="text-5xl font-bold text-red-600 mb-1">
         Caution
       </h1>
