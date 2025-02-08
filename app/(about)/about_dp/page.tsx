@@ -31,6 +31,7 @@ import image1 from "@/public/images/p6.webp";
 import image2 from "@/public/images/p8.webp";
 import image3 from "@/public/images/p1.webp";
 import image4 from "@/public/images/p9.webp";
+import teachers_grp_pic from "@/public/images/teacher_grp_pic.webp";
 import Link from "next/link";
 
 export default function Aboutdp() {
@@ -95,7 +96,7 @@ export default function Aboutdp() {
 
         <section className="px-5 py-5">
           <div className="container">
-            <div className="pt-5 flex flex-row items-center justify-center space-x-48 lg:pt-10 font-plain">
+            <div className="pt-5 flex flex-row items-center justify-center space-x-20 lg:space-x-48 lg:pt-10 font-plain">
               <div className="text-center">
                 <p className="text-sm font-medium text-muted-foreground">
                   more than
@@ -211,7 +212,7 @@ export default function Aboutdp() {
                 </div>
               </div>
               <Image
-                src={image1}
+                src={teachers_grp_pic}
                 alt="hero"
                 className="max-h-96 w-full rounded-md object-cover"
               />
@@ -222,11 +223,13 @@ export default function Aboutdp() {
         <section className="pt-10 pb-3 px-20">
           <div className="container">
             <div className="grid items-center gap-8 lg:grid-cols-2">
-              <Image
-                src={image4}
-                alt="hero"
-                className="max-h-96 w-full rounded-md object-cover"
-              />
+              <div className="hidden lg:block">
+                <Image
+                  src={image4}
+                  alt="hero"
+                  className="max-h-96 w-full rounded-md object-cover"
+                />
+              </div>
               <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
                 <h1 className="pb-5 text-pretty text-4xl font-bold lg:text-6xl font-special">
                   Extra-Curricular Activities
@@ -250,6 +253,13 @@ export default function Aboutdp() {
                     </Button>
                   </Link>
                 </div>
+              </div>
+              <div className="block lg:hidden">
+                <Image
+                  src={image4}
+                  alt="hero"
+                  className="max-h-96 w-full rounded-md object-cover"
+                />
               </div>
             </div>
           </div>
@@ -291,27 +301,6 @@ export default function Aboutdp() {
               of belonging and spiritual connection with Bellanwila Temple,
               enriching their moral and cultural growth.
             </p>
-          </div>
-        </section>
-
-        <section className="py-12 px-16">
-          <div className="container">
-            <div className="flex w-full flex-col gap-16 overflow-hidden rounded-xl bg-accent p-4 md:rounded-xl lg:flex-row lg:items-center lg:p-10">
-              <div className="flex-1">
-                <h3 className="mb-1 text-2xl font-semibold md:mb-4 md:text-4xl lg:mb-1 font-special">
-                  Access Our LMS
-                </h3>
-                <p className="text-muted-foreground lg:text-lg font-plain">
-                  Access Our Learning Management System, Exclusive for Sri
-                  Bodhiraja Dhamma School's Students
-                </p>
-              </div>
-              <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-                <Link href="/lms">
-                  <Button className="rounded">Access LMS</Button>
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
       </main>
