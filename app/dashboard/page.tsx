@@ -106,13 +106,13 @@ export default async function DashboardPage() {
                     </h2>
                     <p className="text-orange-400">{user?.email}</p>
                   </div>
-                  <Link href={"/dashboard/update-profile"}>
+                  <Link href={"/dashboard/settings"}>
                     <Button
                       variant={"outline"}
                       className="rounded-md hover:bg-orange-600"
                     >
                       <Settings2 />
-                      Update
+                      Settings
                     </Button>
                   </Link>
                 </div>
