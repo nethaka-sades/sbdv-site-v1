@@ -37,17 +37,10 @@ const sections = [
     ],
   },
   {
-    title: 'Prefects Guild',
-    links: [
-      { name: 'Board of Officials 2024/25', href: '/board_of_officials' },
-      { name: 'History', href: '/history_of_prefects' },
-    ],
-  },
-  {
     title: 'More',
     links: [
       { name: 'Extra-Curricular Activities', href: '/extra' },
-      { name: 'Resources', href: '/resources' },
+      { name: 'Prefects Guild', href: '/prefects_guild' },
     ],
   },
 ];
@@ -70,7 +63,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="hidden md:grid grid-cols-3 gap-3 lg:gap-10">
+            <div className="hidden md:grid grid-cols-2 gap-3 lg:gap-10">
               {sections.map((section, sectionIdx) => (
                 <div key={sectionIdx}>
                   <h3 className="mb-3 font-bold">{section.title}</h3>
