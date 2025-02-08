@@ -32,7 +32,7 @@ export default function Settings(){
             <div className="p-5 flex flex-col items-center gap-y-5 border rounded-md">
                 <Link href={"/dashboard/update-profile"}><Button variant={"outline"} className="text-primary-foreground"><User />Update Profile</Button></Link>
                 <Link href={"/dashboard/reset-password"}><Button variant={"outline"} className="text-primary-foreground"><KeyRound />Update Password</Button></Link>
-                <Link href={"/dashboard/update-profile"}><Button variant={"destructive"} className="text-primary-foreground"><Trash />Delete Account</Button></Link>
+                <Link href={"/dashboard/delete-request"}><Button variant={"destructive"} className="text-primary-foreground"><Trash />Delete Account</Button></Link>
             </div>
         </main>
     );
