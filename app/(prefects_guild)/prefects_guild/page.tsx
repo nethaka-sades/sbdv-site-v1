@@ -25,18 +25,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import imageb from "@/public/images/p5.webp";
 
+import hp1 from "@/public/images/hp-1.jpg";
+import hp2 from "@/public/images/hp-2.jpg";
+
+import dhp4 from "@/public/images/dhp-4.jpg";
+
 const hps = [
   {
     id: "hp-1",
     name: "Lakwan Lonidu",
     role: "Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: hp1.src,
   },
   {
     id: "hp-2",
     name: "Selini Dulwanya",
     role: "Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-2.webp",
+    avatar: hp2.src,
   },
 ];
 
@@ -78,7 +83,7 @@ const dhp = [
     id: "dhp-4",
     name: "Kavindi Nethmi",
     role: "Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: dhp4.src,
   },
 ];
 
