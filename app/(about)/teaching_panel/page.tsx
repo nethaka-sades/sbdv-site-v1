@@ -85,7 +85,7 @@ const teachers_names = [
   "Mrs. Jayamini Apsara",
 ];
 
-export default function teachers() {
+export default function TeachingPanel() {
   return (
     <main>
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>

@@ -30,7 +30,7 @@ import image1 from "@/public/images/p6.webp";
 import image2 from "@/public/images/p7.webp";
 import image3 from "@/public/images/p10.webp";
 
-export default function ec_acts() {
+export default function Extra() {
   return (
     <main>
       <section className="px-5 py-32 z-10">
