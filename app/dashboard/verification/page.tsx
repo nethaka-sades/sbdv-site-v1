@@ -21,13 +21,27 @@
  *  
  */
 
-import { signOutAction } from "@/app/actions";
+"use client";
+
+import { check_verification_status, signOutAction } from "@/app/actions";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { encodedRedirect } from "@/utils/utils";
+import { actionAsyncStorage } from "next/dist/server/app-render/action-async-storage.external";
+import { useEffect } from "react";
 
 export default function verification() {
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const status = await check_verification_status();
+      if (status) {
+        encodedRedirect("success", "/dashboard", "Verification Successful");
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="flex flex-col space-y-3 items-center justify-center h-screen text-center px-10">
       <LoadingScreen />
@@ -36,7 +50,7 @@ export default function verification() {
       </h1>
       <p className="text-gray-400 text-lg mb-1">
         The information related to your account is being verified. Please wait
-        in the waitlist until that information processed.
+        in the waitlist until that information processed. You will be automatically redirected
       </p>
       <p className="text-red-500 mb-6">
         If you think the entered information are inacurate please remove

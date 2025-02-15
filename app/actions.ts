@@ -59,7 +59,7 @@ export const signUpAction = async (formData: FormData) => {
   if (data.user) {  // Check if signup was successful
     const { error: profileError } = await supabase
       .from('profiles')
-      .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false }]); // Use user.id!
+      .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false }]);
 
     if (profileError) {
       console.error(profileError.code + ' Error creating profile: ', profileError);
@@ -72,6 +72,23 @@ export const signUpAction = async (formData: FormData) => {
       return encodedRedirect("error", "/sign-up", profileError.message);
     } else {
       console.log('Profile created successfully!');
+    }
+
+    const { error: MarksError } = await supabase
+      .from('marks')
+      .insert([{ id: data.user.id, first_term: "", second_term: "", third_term: "" }]);
+
+    if (MarksError) {
+      console.error(MarksError.code + ' Error creating marks profile: ', MarksError);
+      await supabase.auth.signOut()
+      const { error: deleteError } = await supabase.auth.admin.deleteUser(data.user.id);
+
+      if (deleteError) {
+        console.error("Error deleting user:", deleteError);
+      }
+      return encodedRedirect("error", "/sign-up", MarksError.message);
+    } else {
+      console.log('Marks Profile created successfully!');
     }
   } else if (error) {
     console.error('Sign-up error:', error);
@@ -185,12 +202,12 @@ export const signOutAction = async () => {
 
 export const getProfileAction = async () => {
   const supabase = await createClient();
-  
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
 
-  const { data: O_data, error: O_error,status: O_status } = await supabase
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const { data: O_data, error: O_error, status: O_status } = await supabase
     .from("profiles")
     .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
     .eq("id", user?.id)
@@ -216,7 +233,7 @@ export const updateProfileAction = async (formData: FormData) => {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: O_data, error: O_error,status: O_status } = await supabase
+  const { data: O_data, error: O_error, status: O_status } = await supabase
     .from("profiles")
     .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
     .eq("id", user?.id)
@@ -251,3 +268,33 @@ export const updateProfileAction = async (formData: FormData) => {
 
   encodedRedirect("success", "/dashboard/update-profile", "Profile updated");
 };
+
+export const check_verification_status = async () => {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return redirect("/sign-in");
+  }
+
+  const { data, error, status } = await supabase
+    .from("profiles")
+    .select(`verified`)
+    .eq("id", user?.id)
+    .single();
+
+  if (error && status !== 406) {
+    console.log(error);
+  }
+
+  if(data?.verified == true){
+    return true;
+  } else {
+    return false;
+  }
+
+  return false;
+}
