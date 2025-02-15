@@ -24,7 +24,7 @@
 import { resetPasswordAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
 import LoadingScreen from "@/components/LoadingScreen";
-import { SubmitButton } from "@/components/submit-button";
+import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -64,9 +64,9 @@ export default async function ResetPassword(props: {
           placeholder="Confirm password"
           required
         />
-        <SubmitButton formAction={resetPasswordAction}>
+        <ModBtn formAction={resetPasswordAction}>
           Reset password
-        </SubmitButton>
+        </ModBtn>
         <FormMessage message={searchParams} />
       </form>
       </div>

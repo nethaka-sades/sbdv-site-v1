@@ -23,7 +23,7 @@
 
 import { signInAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
-import { SubmitButton } from "@/components/submit-button";
+import { ModBtn } from "@/components/mod-btn";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
@@ -69,9 +69,9 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
             placeholder="Your password"
             required
           />
-          <SubmitButton formAction={signInAction} pendingText="Signing in...">
+          <ModBtn formAction={signInAction} pendingText="Signing in...">
             Sign in
-          </SubmitButton>
+          </ModBtn>
           <FormMessage message={searchParams} />
         </div>
       </form>
@@ -126,12 +126,12 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
                 placeholder="Your password"
                 required
               />
-              <SubmitButton
+              <ModBtn
                 pendingText="Signing In..."
                 formAction={signInAction}
               >
                 Sign in
-              </SubmitButton>
+              </ModBtn>
               <FormMessage message={searchParams} />
             </div>
           </form>

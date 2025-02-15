@@ -23,7 +23,7 @@
 import { resetPasswordAction, updateProfileAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
 import LoadingScreen from "@/components/LoadingScreen";
-import { SubmitButton } from "@/components/submit-button";
+import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -91,12 +91,12 @@ export default async function UpdateProfile(props: {
             <Input name="phone_no" placeholder={O_data?.phone_no} />
             <Label htmlFor="whatsapp_no">WhatsApp Number</Label>
             <Input name="whatsapp_no" placeholder={O_data?.whatsapp_no} />
-            <SubmitButton
+            <ModBtn
               formAction={updateProfileAction}
               pendingText="Updating..."
             >
               Update
-            </SubmitButton>
+            </ModBtn>
             <FormMessage message={searchParams} />
           </div>
         </form>

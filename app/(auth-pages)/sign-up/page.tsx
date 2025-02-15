@@ -23,7 +23,7 @@
 
 import { signUpAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
-import { SubmitButton } from "@/components/submit-button";
+import { ModBtn } from "@/components/mod-btn";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
@@ -89,9 +89,9 @@ export default async function Signup(props: {
           <Label htmlFor="whatsapp_no">WhatsApp Number</Label>
           <Input name="whatsapp_no" placeholder="Your WhatsApp Number" required />
           <p className="text-center">I confirm that above information are accurate upto date.</p>
-          <SubmitButton formAction={signUpAction} pendingText="Signing up...">
+          <ModBtn formAction={signUpAction} pendingText="Signing up...">
             Sign up
-          </SubmitButton>
+          </ModBtn>
           <FormMessage message={searchParams} />
         </div>
       </form>
