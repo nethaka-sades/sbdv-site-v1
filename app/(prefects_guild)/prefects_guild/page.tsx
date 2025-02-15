@@ -30,6 +30,8 @@ import hp2 from "@/public/images/hp-2.jpg";
 
 import dhp4 from "@/public/images/dhp-4.jpg";
 
+import sample from "@/public/images/sample.jpg";
+
 const hps = [
   {
     id: "hp-1",
@@ -50,13 +52,13 @@ const sdhp = [
     id: "sdhp-1",
     name: "Sahas Karunaratna",
     role: "Senior Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: sample.src,
   },
   {
     id: "sdhp-2",
     name: "Denethi Kaushalya",
     role: "Senior Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: sample.src,
   },
 ];
 
@@ -65,19 +67,19 @@ const dhp = [
     id: "dhp-1",
     name: "Nethaka De Saram",
     role: "Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: sample.src,
   },
   {
     id: "dhp-2",
     name: "Thisen Viruja",
     role: "Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: sample.src,
   },
   {
     id: "dhp-3",
     name: "Samudi Manodya",
     role: "Deputy Head Prefect",
-    avatar: "https://www.shadcnblocks.com/images/block/avatar-1.webp",
+    avatar: sample.src,
   },
   {
     id: "dhp-4",
