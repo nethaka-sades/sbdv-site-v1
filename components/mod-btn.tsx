@@ -33,7 +33,7 @@ type Props = ComponentProps<typeof Button> & {
 
 export function ModBtn({
   children,
-  pendingText = "Submitting...",
+  pendingText = "Please Wait...",
   ...props
 }: Props) {
   const { pending } = useFormStatus();
