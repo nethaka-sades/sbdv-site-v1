@@ -45,7 +45,7 @@ export default async function DashboardPage() {
 
   const { data, error, status } = await supabase
     .from("profiles")
-    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified`)
+    .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified, deletion_req, deletion_req_date, deletion_confirmed`)
     .eq("id", user?.id)
     .single();
 
@@ -56,6 +56,14 @@ export default async function DashboardPage() {
 
   if(!data?.verified){
     return redirect("/dashboard/verification");
+  }
+
+  if(data?.deletion_confirmed){
+    return redirect("/dashboard/delete-confirmed");
+  }
+
+  if(data?.deletion_req){
+    return redirect("/dashboard/delete-request");
   }
 
   const { data: notices, error: notices_error } = await supabase

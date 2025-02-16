@@ -247,8 +247,7 @@ export const updateProfileAction = async (formData: FormData) => {
     );
   }
 
-  const { error } = await supabase.from("profiles").upsert({
-    id: user?.id as string,
+  const { error } = await supabase.from("profiles").update({
     full_name: full_name_n || O_data?.full_name,
     admin_year: O_data?.admin_year,
     admin_no: O_data?.admin_no,
@@ -256,7 +255,7 @@ export const updateProfileAction = async (formData: FormData) => {
     phone_no: phone_no_n || O_data?.phone_no,
     whatsapp_no: whatsapp_no_n || O_data?.whatsapp_no,
     updated_at: new Date().toISOString(),
-  });
+  }).eq("id", user?.id);
 
   if (error) {
     encodedRedirect(
@@ -297,4 +296,60 @@ export const check_verification_status = async () => {
   }
 
   return false;
+}
+
+export const request_deletion = async () => {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return redirect("/sign-in");
+  }
+
+  const { error } = await supabase
+  .from('profiles')
+  .update({
+    deletion_req: true,
+    deletion_req_date: new Date().toISOString()
+  })
+  .eq('id', user?.id);
+
+  console.log(error);
+
+  if (error) {
+    return encodedRedirect("error", "/dashboard/delete-request", "Deletion Request Failed");
+  } else {
+    return encodedRedirect("success", "/dashboard/delete-request", "");
+  }
+}
+
+export const cancel_request_deletion = async () => {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return redirect("/sign-in");
+  }
+
+  const { error } = await supabase
+  .from('profiles')
+  .update({
+    deletion_req: false,
+    deletion_req_date: null
+  })
+  .eq('id', user?.id);
+
+  console.log(error);
+
+  if (error) {
+    return encodedRedirect("error", "/dashboard/delete-request", "Deletion Request Cancellation Failed");
+  } else {
+    return encodedRedirect("success", "/dashboard/delete-request", "");
+  }
 }
