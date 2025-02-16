@@ -25,14 +25,6 @@ import { FormMessage, Message } from "@/components/form-message";
 import LoadingScreen from "@/components/LoadingScreen";
 import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -65,8 +57,6 @@ export default async function UpdateProfile(props: {
     console.log(O_error);
     throw O_error;
   }
-
-  
 
   return (
     <main className="min-h-screen px-20 py-20 lg:max-w-2xl mx-auto">
