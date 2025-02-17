@@ -310,12 +310,12 @@ export const request_deletion = async () => {
   }
 
   const { error } = await supabase
-  .from('profiles')
-  .update({
-    deletion_req: true,
-    deletion_req_date: new Date().toISOString()
-  })
-  .eq('id', user?.id);
+    .from('profiles')
+    .update({
+      deletion_req: true,
+      deletion_req_date: new Date().toISOString()
+    })
+    .eq('id', user?.id);
 
   console.log(error);
 
@@ -338,12 +338,12 @@ export const cancel_request_deletion = async () => {
   }
 
   const { error } = await supabase
-  .from('profiles')
-  .update({
-    deletion_req: false,
-    deletion_req_date: null
-  })
-  .eq('id', user?.id);
+    .from('profiles')
+    .update({
+      deletion_req: false,
+      deletion_req_date: null
+    })
+    .eq('id', user?.id);
 
   console.log(error);
 

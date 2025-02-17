@@ -21,7 +21,6 @@
  *  This file use original nextjs-supabase boilerplate repo code
  */
 
-import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import { LogOut, Settings2 } from "lucide-react";
 import { redirect } from "next/navigation";
@@ -31,6 +30,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import LoadingScreen from "@/components/LoadingScreen";
+import { ModBtn } from "@/components/mod-btn";
+import { Button } from "@/components/ui/button";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -98,14 +99,16 @@ export default async function DashboardPage() {
           <h1 className="text-3xl lg:text-5xl font-bold font-special ">
             Welcome
           </h1>
-          <Button
+          <form>
+          <ModBtn
             variant={"outline"}
             className="rounded-md border-red-600 hover:bg-red-600"
             onClick={signOutAction}
           >
             <LogOut />
             Logout
-          </Button>
+          </ModBtn>
+          </form>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
