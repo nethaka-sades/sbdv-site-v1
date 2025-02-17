@@ -50,7 +50,7 @@ export default async function ForgotPassword(props: {
         <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
           <Label htmlFor="email">Email</Label>
           <Input name="email" placeholder="you@example.com" required />
-          <ModBtn formAction={forgotPasswordAction}>
+          <ModBtn pendingText="Resetting" formAction={forgotPasswordAction}>
             Reset Password
           </ModBtn>
           <FormMessage message={searchParams} />
