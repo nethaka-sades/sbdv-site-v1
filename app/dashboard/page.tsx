@@ -174,7 +174,7 @@ export default async function DashboardPage() {
           <div className="border p-6 rounded-lg">
             <h3 className="text-3xl font-bold mb-4">Notices</h3>
             <ScrollArea className="h-32">
-              {notices && notices.length > 0 ? ( // Check if notices exist and have data
+              {notices && notices.length > 0 ? (
                 notices.map((notice) => (
                   <div key={notice.id}>
                     <div>
