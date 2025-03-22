@@ -103,6 +103,7 @@ export default async function DashboardPage() {
           <ModBtn
             variant={"outline"}
             className="rounded-md border-red-600 hover:bg-red-600"
+            pendingText="Logging out..."
             onClick={signOutAction}
           >
             <LogOut />
