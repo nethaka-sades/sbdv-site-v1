@@ -128,6 +128,37 @@ export default function Extra() {
                 competitions.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+                <Link href="/extra/apg">
+                  <Button
+                    variant={"outline"}
+                    className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
+                  >
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-10 pb-3 px-20">
+        <div className="container">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <Image
+              src={image1}
+              alt="hero"
+              className="max-h-96 w-full rounded-md object-cover"
+            />
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <h1 className="pb-5 text-pretty text-4xl font-bold lg:text-6xl font-special">
+                Prefects Guild's Projects
+              </h1>
+              <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg font-plain">
+                Projects done by the Prefects Guild of the Sri Bodhiraja Dhamma School in the year 2024/25
+              </p>
+              <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
                 <Link href="/extra/houses">
                   <Button
                     variant={"outline"}
