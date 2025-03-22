@@ -30,6 +30,7 @@ import image1 from "@/public/images/p6.webp";
 import image2 from "@/public/images/p7.webp";
 import image3 from "@/public/images/p10.webp";
 import image4 from "@/public/images/p5.webp";
+import image5 from "@/public/images/p15.webp";
 
 export default function Extra() {
   return (
@@ -37,7 +38,7 @@ export default function Extra() {
       <section className="px-5 py-32 z-10">
         <div className="container text-center">
           <Image
-            src={image2}
+            src={image1}
             fill
             alt="jsut"
             className="object-cover -z-10 overflow-hidden opacity-[.02] blur-sm"
@@ -111,7 +112,7 @@ export default function Extra() {
         <div className="container">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <Image
-              src={image2}
+              src={image5}
               alt="hero"
               className="max-h-96 w-full rounded-md object-cover"
             />
