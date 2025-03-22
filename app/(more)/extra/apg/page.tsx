@@ -26,7 +26,7 @@ import image1 from "@/public/images/p11.webp";
 import image2 from "@/public/images/p12.webp";
 import image3 from "@/public/images/p10.webp";
 
-export default function houses() {
+export default function apg() {
   return (
     <main>
       <section className="px-5 py-32 z-10">
