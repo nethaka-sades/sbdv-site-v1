@@ -93,12 +93,6 @@ export default async function delete_request_page(props: {
               </form>
             </div>
             <FormMessage message={searchParams} />
-            <Link href={"/dashboard"}>
-              <Button className="text-primary-foreground my-2" variant="link">
-                <ArrowLeft />
-                Back to Dashboard
-              </Button>
-            </Link>
           </div>
         ) : (
           <div>
