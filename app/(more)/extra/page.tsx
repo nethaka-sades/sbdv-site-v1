@@ -29,6 +29,7 @@ import Image from "next/image";
 import image1 from "@/public/images/p6.webp";
 import image2 from "@/public/images/p7.webp";
 import image3 from "@/public/images/p10.webp";
+import image4 from "@/public/images/p5.webp";
 
 export default function Extra() {
   return (
@@ -147,7 +148,7 @@ export default function Extra() {
         <div className="container">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <Image
-              src={image1}
+              src={image4}
               alt="hero"
               className="max-h-96 w-full rounded-md object-cover"
             />
