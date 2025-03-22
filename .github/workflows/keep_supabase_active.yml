@@ -3,6 +3,7 @@ name: Keep Supabase Active
 on:
   schedule:
     - cron: "*/10 * * * *"  # Runs every 10 minutes
+  workflow_dispatch:
 
 jobs:
   keep-supabase-awake:
