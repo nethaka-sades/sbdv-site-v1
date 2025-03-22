@@ -55,16 +55,16 @@ export default async function DashboardPage() {
     throw error;
   }
 
-  if(!data?.verified){
-    return redirect("/dashboard/verification");
-  }
-
   if(data?.deletion_confirmed){
     return redirect("/dashboard/delete-confirmed");
   }
 
   if(data?.deletion_req){
     return redirect("/dashboard/delete-request");
+  }
+  
+  if(!data?.verified){
+    return redirect("/dashboard/verification");
   }
 
   const { data: notices, error: notices_error } = await supabase

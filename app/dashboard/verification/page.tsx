@@ -23,7 +23,7 @@
 
 "use client";
 
-import { check_verification_status, signOutAction } from "@/app/actions";
+import { check_verification_status, request_deletion, signOutAction } from "@/app/actions";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { encodedRedirect } from "@/utils/utils";
@@ -41,6 +41,7 @@ export default function verification() {
 
     return () => clearInterval(interval);
   }, []);
+  
   return (
     <div className="flex flex-col space-y-3 items-center justify-center h-screen text-center px-10">
       <LoadingScreen />
@@ -57,7 +58,7 @@ export default function verification() {
       </p>
       <Button
         variant={"outline"}
-        onClick={signOutAction}
+        onClick={request_deletion}
         className=" text-white rounded-md hover:bg-red-600 transition"
       >
         Remove From the Waitlist
