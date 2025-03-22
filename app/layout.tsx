@@ -63,7 +63,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`}>
+    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`} suppressHydrationWarning>
       <head>
         <link
           rel="icon"
