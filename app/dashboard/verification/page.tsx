@@ -27,7 +27,6 @@ import { check_verification_status, signOutAction } from "@/app/actions";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { encodedRedirect } from "@/utils/utils";
-import { actionAsyncStorage } from "next/dist/server/app-render/action-async-storage.external";
 import { useEffect } from "react";
 
 export default function verification() {
