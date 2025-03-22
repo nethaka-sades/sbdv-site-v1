@@ -90,7 +90,7 @@ export default function Hero() {
             <span className="text-gray-300">Web Portal</span> of
           </p>
 
-          <div className="mt-3">
+          <div className="mt-3 text-white">
             <h1 className="font-special text-4xl font-extrabold lg:text-5xl">
               Sri Bodhiraja
               <br />
