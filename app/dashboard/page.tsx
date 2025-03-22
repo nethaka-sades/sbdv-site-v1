@@ -74,7 +74,7 @@ export default async function DashboardPage() {
 
   if (notices_error) {
     console.log(notices_error);
-    throw error;
+    throw notices_error;
   }
 
   const { data: marks_data, error: marks_data_error } = await supabase
