@@ -5,12 +5,12 @@ on:
     - cron: "*/10 * * * *"  # Runs every 10 minutes
 
 jobs:
-  ping-supabase:
+  keep-supabase-awake:
     runs-on: ubuntu-latest
     steps:
-      - name: Send API Request to Supabase
+      - name: Call Supabase Function
         run: |
-          curl -X POST "https://dbcaedilyjrhaiqkcpfw.supabase.co/rest/v1/rpc/keep_alive" \
-            -H "apikey: SUPABASE_SERVICE_ROLE_KEY" \
+          curl -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/keep_alive" \
+            -H "apikey: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
             -H "Content-Type: application/json" \
             --data '{}'
