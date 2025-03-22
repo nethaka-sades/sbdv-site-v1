@@ -30,6 +30,7 @@ import hp2 from "@/public/images/hp-2.jpg";
 
 import sdhp2 from "@/public/images/sdhp-2.jpg";
 
+import dhp1 from "@/public/images/dhp-1.jpg";
 import dhp2 from "@/public/images/dhp-2.jpg";
 import dhp3 from "@/public/images/dhp-3.jpg";
 import dhp4 from "@/public/images/dhp-4.jpg";
@@ -71,7 +72,7 @@ const dhp = [
     id: "dhp-1",
     name: "Nethaka De Saram",
     role: "Deputy Head Prefect",
-    avatar: sample.src,
+    avatar: dhp1.src,
   },
   {
     id: "dhp-2",
@@ -172,7 +173,7 @@ export default function pg() {
             <p className="text-center text-muted-foreground">Tharushi Vihangana</p>
             <p className="text-center text-muted-foreground">Thathsari Lithumiya</p>
             <p className="text-center text-muted-foreground">Kuluni Sneha</p>
-            <p className="text-center text-muted-foreground">Minasha Pirisi</p>
+            <p className="text-center text-muted-foreground">Minasha Peris</p>
           </div>
         </section>
 
@@ -226,7 +227,7 @@ export default function pg() {
               <p className="text-center text-muted-foreground">
                 Yumeth Mindeepa
               </p>
-              <p className="text-center text-muted-foreground">sadaru Sudassana</p>
+              <p className="text-center text-muted-foreground">Sadaru Sudassana</p>
               <p className="text-center text-muted-foreground">
                 Lasiru Thivanka
               </p>
@@ -248,6 +249,82 @@ export default function pg() {
               <p className="text-center text-muted-foreground">Methuki Thedasna</p>
               <p className="text-center text-muted-foreground">
                 Jenuli Senurima
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-5">
+          <div className="container grid gap-y-5 md:grid-cols-2 lg:grid-col-2">
+            <div className="flex flex-col items-center">
+              <p className="text-center font-medium">Prefects</p>
+              <p className="text-center text-muted-foreground">
+                Udan Induwara
+              </p>
+              <p className="text-center text-muted-foreground">
+                Sachith Anuththara
+              </p>
+              <p className="text-center text-muted-foreground">
+                Sathsara Manusha
+              </p>
+              <p className="text-center text-muted-foreground">Ravindu Manoj</p>
+              <p className="text-center text-muted-foreground">
+                Kemitha Tharun
+              </p>
+              <p className="text-center text-muted-foreground">
+                Thimath Methdinu
+              </p>
+              <p className="text-center text-muted-foreground">
+                Pavan Semitha
+              </p>
+              <p className="text-center text-muted-foreground">
+                Dehan Thinura
+              </p>
+              <p className="text-center text-muted-foreground">
+                Nimnaka Disandu
+              </p>
+              <p className="text-center text-muted-foreground">
+                Disas Nethmira
+              </p>
+              <p className="text-center text-muted-foreground">
+                Senuka Kalhan
+              </p>
+              <p className="text-center text-muted-foreground">
+                Kavinu Methmika
+              </p>
+              <p className="text-center text-muted-foreground">
+                Sageeth Methsilu
+              </p>
+              <p className="text-center text-muted-foreground">
+                Bihandu Geemeth
+              </p>
+              <p className="text-center text-muted-foreground">
+                Sithum Sandira
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="text-center font-medium">Prefects</p>
+              <p className="text-center text-muted-foreground">
+                Dinuji Induwari
+              </p>
+              <p className="text-center text-muted-foreground">
+                Yenuthi Bipulma
+              </p>
+              <p className="text-center text-muted-foreground">
+                Methuli Sehansa
+              </p>
+              <p className="text-center text-muted-foreground">Methuki Sumindi</p>
+              <p className="text-center text-muted-foreground">
+                Gimsara Yasarangi
+              </p>
+              <p className="text-center text-muted-foreground">
+                Kamudi Pinipa
+              </p>
+              <p className="text-center text-muted-foreground">
+                Saheli Sandalini
+              </p>
+              <p className="text-center text-muted-foreground">
+                Dilara Geesandi
               </p>
             </div>
           </div>
