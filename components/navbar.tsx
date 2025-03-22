@@ -243,7 +243,9 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                 >
                   <Link href="/learning_materials">Learning Materials</Link>
                 </Button>
+                <div onClick={(e) => setIsOpen(false)}>
                   {children}
+                </div>
               </div>
             </SheetContent>
           </Sheet>
