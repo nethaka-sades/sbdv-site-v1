@@ -350,6 +350,6 @@ export const cancel_request_deletion = async () => {
   if (error) {
     return encodedRedirect("error", "/dashboard/delete-request", "Deletion Request Cancellation Failed");
   } else {
-    return encodedRedirect("success", "/dashboard/delete-request", "");
+    return encodedRedirect("success", "/dashboard", "Deletion Request Cancelled");
   }
 }
