@@ -59,7 +59,7 @@ export const signUpAction = async (formData: FormData) => {
   if (data.user) {  // Check if signup was successful
     const { error: profileError } = await supabase
       .from('profiles')
-      .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false }]);
+      .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false, user_email: email }]);
 
     if (profileError) {
       console.error(profileError.code + ' Error creating profile: ', profileError);
