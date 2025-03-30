@@ -25,6 +25,7 @@
 
 import { check_verification_status, request_deletion, signOutAction } from "@/app/actions";
 import LoadingScreen from "@/components/LoadingScreen";
+import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
 import { encodedRedirect } from "@/utils/utils";
 import { useEffect } from "react";
@@ -56,19 +57,21 @@ export default function verification() {
         If you think the entered information are inacurate please remove
         yourself from the waitlist and register again.
       </p>
-      <Button
+      <ModBtn
         variant={"outline"}
         onClick={request_deletion}
         className=" text-white rounded-md hover:bg-red-600 transition"
+        pendingText="requesting..."
       >
         Remove From the Waitlist
-      </Button>
-      <Button
+      </ModBtn>
+      <ModBtn
         onClick={signOutAction}
         className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
+        pendingText="wait..."
       >
         Logout
-      </Button>
+      </ModBtn>
     </div>
   );
 }
