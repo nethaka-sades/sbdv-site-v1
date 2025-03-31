@@ -23,34 +23,8 @@
 
 import { type NextRequest } from "next/server";
 import { updateSession } from "@/utils/supabase/middleware";
-import { get } from '@vercel/edge-config';
-import { NextResponse } from 'next/server';
 
 export async function middleware(request: NextRequest) {
-  try {
-    const [siteStatus, lmsStatus, learningStatus] = await Promise.all([
-      get('site_status'),
-      get('lms_status'),
-      get('learning_status'),
-    ]);
-
-    // Global maintenance mode
-    if (siteStatus === false) {
-      return NextResponse.redirect(new URL('/maintenance', request.url));
-    }
-
-    // Route-specific blocking
-    const path = request.nextUrl.pathname;
-    if (path.startsWith('/dashboard') && lmsStatus === false) {
-      return NextResponse.redirect(new URL('/unavailable', request.url));
-    }
-    if (path.startsWith('/learning_materials') && learningStatus === false) {
-      return NextResponse.redirect(new URL('/unavailable', request.url));
-    }
-  } catch (error) {
-    console.error('Edge Config failed (falling through):', error);
-    // Proceed to session logic if Edge Config fails
-  }
   return await updateSession(request);
 }
 
