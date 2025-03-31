@@ -62,8 +62,16 @@ import AuthButton from "@/components/HeaderAuth";
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const site_status = process.env.SITE_STATUS;
+  console.log(site_status);
+  
+
   return (
-    <html lang="en" className={`${aclonica.variable} ${alatsi.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${aclonica.variable} ${alatsi.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link
           rel="icon"
@@ -83,19 +91,37 @@ export default function RootLayout({
       </head>
 
       <body className="antialiased">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar><AuthButton /></Navbar>
-            <LoadingScreen />
-            {children}
-            <Footer />
-          </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {site_status === "true" ? (
+            <main>
+              <Navbar>
+                <AuthButton />
+              </Navbar>
+              <LoadingScreen />
+              {children}
+              <Footer />
+            </main>
+          ) : (
+            <div className="min-h-screen flex items-center justify-center">
+              <div className="text-center space-y-6 p-6">
+                <h1 className="text-4xl font-bold text-white">
+                  Under Maintenance
+                </h1>
+                <p className="text-lg text-neutral-200 max-w-md">
+                  We&apos;re performing some scheduled maintenance. We&apos;ll
+                  be back online shortly.
+                </p>
+              </div>
+            </div>
+          )}
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
