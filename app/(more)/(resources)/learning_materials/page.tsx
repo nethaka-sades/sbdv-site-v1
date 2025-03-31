@@ -31,73 +31,90 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import LoadingScreen from "@/components/LoadingScreen";
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
 
 export default function more_res() {
-  return (
-    <main className="h-dvh">
-      <section className="pt-24 lg:pt-32">
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
-        <Image
-          src={imageb}
-          alt="bg-img-1"
-          fill
-          className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
-        />
-        <div className="container flex flex-col items-center text-center">
-          <p className="text-muted-foreground font-plain text-sm md:text-md">
-            Access
-          </p>
-          <h2 className="my-2 text-4xl lg:text-7xl font-special text-pretty">
-            Learning Materials
-          </h2>
-          <p className="pt-1 px-10 text-pretty text-muted-foreground">
-            Welcome to the Learning Materials page, Select your catagory & grade to find
-            textbooks, study guides, and more to support your learning journey.
-          </p>
-        </div>
-      </section>
+  const lm_status = process.env.LM_STATUS;
 
-      <section>
-        <div className="container py-12 px-5">
-          <div className="lg:px-60 grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="items-center">
-              <CardHeader className="text-center pb-2">
-                <span className="font-bold text-5xl mb-5">TextBooks</span>
-              </CardHeader>
-              <CardDescription className="text-center mb-5">
-                Download your textbooks according to your grade
-              </CardDescription>
-              <CardFooter className="flex flex-col gap-3">
-                <Link href={"/textbooks"}>
-                  <Button className="w-80 bg-primary" variant={"outline"}>
-                    Select Grade
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
-            <Card className="items-center">
-              <CardHeader className="text-center pb-2">
-                <span className="font-bold text-5xl mb-5">Past Papers</span>
-              </CardHeader>
-              <CardDescription className="text-center mb-5">
-                Download Past papers
-              </CardDescription>
-              <CardFooter className="flex flex-col gap-3">
-                <Link href={"/pastpapers"}>
-                  <Button className="w-80 bg-primary" variant={"outline"}>
-                    Select Grade
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
+  return (
+    <div>
+      {lm_status === "true" ? (
+        <main className="h-dvh">
+          <section className="pt-24 lg:pt-32">
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
+            <Image
+              src={imageb}
+              alt="bg-img-1"
+              fill
+              className="object-cover overflow-hidden blur-sm -z-30 opacity-5"
+            />
+            <div className="container flex flex-col items-center text-center">
+              <p className="text-muted-foreground font-plain text-sm md:text-md">
+                Access
+              </p>
+              <h2 className="my-2 text-4xl lg:text-7xl font-special text-pretty">
+                Learning Materials
+              </h2>
+              <p className="pt-1 px-10 text-pretty text-muted-foreground">
+                Welcome to the Learning Materials page, Select your catagory &
+                grade to find textbooks, study guides, and more to support your
+                learning journey.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div className="container py-12 px-5">
+              <div className="lg:px-60 grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+                <Card className="items-center">
+                  <CardHeader className="text-center pb-2">
+                    <span className="font-bold text-5xl mb-5">TextBooks</span>
+                  </CardHeader>
+                  <CardDescription className="text-center mb-5">
+                    Download your textbooks according to your grade
+                  </CardDescription>
+                  <CardFooter className="flex flex-col gap-3">
+                    <Link href={"/textbooks"}>
+                      <Button className="w-80 bg-primary" variant={"outline"}>
+                        Select Grade
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+                <Card className="items-center">
+                  <CardHeader className="text-center pb-2">
+                    <span className="font-bold text-5xl mb-5">Past Papers</span>
+                  </CardHeader>
+                  <CardDescription className="text-center mb-5">
+                    Download Past papers
+                  </CardDescription>
+                  <CardFooter className="flex flex-col gap-3">
+                    <Link href={"/pastpapers"}>
+                      <Button className="w-80 bg-primary" variant={"outline"}>
+                        Select Grade
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </div>
+            </div>
+          </section>
+        </main>
+      ) : (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-6 p-6">
+            <h1 className="text-4xl font-bold text-white">
+              This Service is Currently Down
+            </h1>
+            <p className="text-lg text-neutral-200 max-w-md">
+              Please check back later or contact support for more information.
+            </p>
           </div>
         </div>
-      </section>
-    </main>
+      )}
+    </div>
   );
 }
