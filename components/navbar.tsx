@@ -47,9 +47,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Hero from "./hero";
-import { ThemeSwitcher } from "./theme-switcher";
-import AuthButton from "./HeaderAuth";
 
 const more_components: { title: string; href: string; description: string }[] =
   [

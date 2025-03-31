@@ -58,13 +58,14 @@ import Footer from "@/components/footer";
 
 import LoadingScreen from "@/components/LoadingScreen";
 import AuthButton from "@/components/HeaderAuth";
+import Link from "next/link";
+import Image from "next/image";
+import main_logo from "@/public/main_logo.webp";
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const site_status = process.env.SITE_STATUS;
-  console.log(site_status);
-  
 
   return (
     <html
@@ -107,8 +108,18 @@ export default function RootLayout({
               <Footer />
             </main>
           ) : (
-            <div className="min-h-screen flex items-center justify-center">
-              <div className="text-center space-y-6 p-6">
+            <div className="min-h-screen flex flex-col items-center justify-center">
+              <div className="flex items-center space-x-4 lg:space-x-6 py-10">
+                <Link href="/" className="flex items-center space-x-2">
+                  <Image
+                    src={main_logo}
+                    alt="main_pic"
+                    className="w-[150px]"
+                    priority
+                  />
+                </Link>
+              </div>
+              <div className="flex-1 py-32 text-center space-y-6 p-6">
                 <h1 className="text-4xl font-bold text-white">
                   Under Maintenance
                 </h1>
@@ -117,6 +128,15 @@ export default function RootLayout({
                   be back online shortly.
                 </p>
               </div>
+              <span className="font-medium text-white text-sm py-5">
+                  Developed by{" "}
+                  <Link
+                    href="https://github.com/nethaka-sades"
+                    className="text-gray-300 hover:text-primary"
+                  >
+                    Nethaka De Saram
+                  </Link>
+                </span>
             </div>
           )}
         </ThemeProvider>
