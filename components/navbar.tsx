@@ -60,6 +60,20 @@ const more_components: { title: string; href: string; description: string }[] =
     },
   ];
 
+  const support_components: { title: string; href: string; description: string }[] =
+  [
+    {
+      title: "Contact",
+      href: "/contact",
+      description: "Contact site administrators",
+    },
+    {
+      title: "Support",
+      href: "/support",
+      description: "Support Section",
+    },
+  ];
+
 export function Navbar({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -137,6 +151,24 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                           href={more_component.href}
                         >
                           {more_component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="hover:text-orange-400 bg-transparent">
+                    Support
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {support_components.map((support_component) => (
+                        <ListItem
+                          key={support_component.title}
+                          title={support_component.title}
+                          href={support_component.href}
+                        >
+                          {support_component.description}
                         </ListItem>
                       ))}
                     </ul>
@@ -224,6 +256,12 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                   </MobileLink>
                   <MobileLink href="/extra" onOpenChange={setIsOpen}>
                     Extra-Curricular Activities
+                  </MobileLink>
+                  <MobileLink href="/contact" onOpenChange={setIsOpen}>
+                    Contact
+                  </MobileLink>
+                  <MobileLink href="/support" onOpenChange={setIsOpen}>
+                    Support
                   </MobileLink>
                 </div>
               </div>
