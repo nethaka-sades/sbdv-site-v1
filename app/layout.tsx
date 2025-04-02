@@ -56,7 +56,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 
-import LoadingScreen from "@/components/LoadingScreen";
 import AuthButton from "@/components/HeaderAuth";
 import Link from "next/link";
 import Image from "next/image";
@@ -103,14 +102,13 @@ export default function RootLayout({
               <Navbar>
                 <AuthButton />
               </Navbar>
-              <LoadingScreen />
               {children}
               <Footer />
             </main>
           ) : (
             <div className="min-h-screen flex flex-col items-center justify-center">
               <div className="flex items-center space-x-4 lg:space-x-6 py-10">
-                <Link href="/" className="flex items-center space-x-2">
+                <Link href="/" className="flex items-center space-x-2" prefetch>
                   <Image
                     src={main_logo}
                     alt="main_pic"
@@ -133,6 +131,7 @@ export default function RootLayout({
                   <Link
                     href="https://github.com/nethaka-sades"
                     className="text-gray-300 hover:text-primary"
+                    prefetch
                   >
                     Nethaka De Saram
                   </Link>
