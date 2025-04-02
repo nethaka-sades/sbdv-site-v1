@@ -49,7 +49,7 @@ export default async function UpdateProfile(props: {
       status: O_status,
     } = await supabase
       .from("profiles")
-      .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
+      .select(`full_name, admin_year, admin_no, dob, c_class, address, phone_no, whatsapp_no`)
       .eq("id", user?.id)
       .single();
 
@@ -89,6 +89,11 @@ export default async function UpdateProfile(props: {
             <Input name="admin_year" placeholder={O_data?.admin_year} />
             <Label htmlFor="admin_no">Admin Number</Label>
             <Input name="admin_no" placeholder={O_data?.admin_no} />
+
+            <Label htmlFor="dob">Date of Birth</Label>
+            <Input name="dob" placeholder={O_data?.dob} />
+            <Label htmlFor="c_class">Current Class</Label>
+            <Input name="c_class" placeholder={O_data?.c_class} />
             <div className="text-center text-red-300">
               Please note that after you update the data you have to be in
               waitlist again

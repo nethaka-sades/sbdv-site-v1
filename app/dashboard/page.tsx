@@ -51,7 +51,7 @@ export default async function DashboardPage() {
   const { data, error, status } = await supabase
     .from("profiles")
     .select(
-      `full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified, deletion_req, deletion_req_date, deletion_confirmed, user_email`
+      `full_name, admin_year, admin_no, dob, c_class, address, phone_no, whatsapp_no, verified, deletion_req, deletion_req_date, deletion_confirmed, user_email`
     )
     .eq("id", user?.id)
     .single();
@@ -160,6 +160,18 @@ export default async function DashboardPage() {
                     <div className="text-xl text-white font-bold">
                       {profilesData?.admin_year}
                     </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-gray-400">Date of Birth</div>
+                  <div className="text-xl text-white font-bold">
+                    {profilesData?.dob}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-gray-400">Current Class</div>
+                  <div className="text-xl text-white font-bold">
+                    {profilesData?.c_class}
                   </div>
                 </div>
                 <div>

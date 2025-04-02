@@ -34,6 +34,8 @@ export const signUpAction = async (formData: FormData) => {
   const full_name = formData.get("display_name")?.toString();
   const admin_no = formData.get("admin_no")?.toString();
   const admin_year = formData.get("admin_year")?.toString();
+  const dob = formData.get("dob")?.toString();
+  const c_class = formData.get("c_class")?.toString();
   const address = formData.get("address")?.toString();
   const phone_no = formData.get("phone_no")?.toString();
   const whatsapp_no = formData.get("whatsapp_no")?.toString();
@@ -67,7 +69,7 @@ export const signUpAction = async (formData: FormData) => {
     if (data.user) {
       const { error: profileError } = await supabase
         .from('profiles')
-        .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false, user_email: email }]);
+        .insert([{ id: data.user.id, full_name: full_name, admin_year: admin_year, admin_no: admin_no, dob: dob, c_class: c_class, address: address, phone_no: phone_no, whatsapp_no: whatsapp_no, verified: false, user_email: email }]);
 
       if (profileError) {
         await supabase.auth.signOut()
@@ -210,6 +212,11 @@ export const updateProfileAction = async (formData: FormData) => {
   const whatsapp_no_n = formData.get("whatsapp_no") as string;
   const admin_year_n = formData.get("admin_year") as string;
   const admin_no_n = formData.get("admin_no") as string;
+  const dob_n = formData.get("dob") as string;
+  const c_class_n = formData.get("c_class") as string;
+
+  // should implement this
+  var dob_f = new Date(dob_n);
 
   const {
     data: { user },
@@ -220,7 +227,7 @@ export const updateProfileAction = async (formData: FormData) => {
   } else {
     const { data: O_data, error: O_error, status: O_status } = await supabase
       .from("profiles")
-      .select(`full_name, admin_year, admin_no, address, phone_no, whatsapp_no`)
+      .select(`full_name, admin_year, admin_no, dob, c_class, address, phone_no, whatsapp_no`)
       .eq("id", user?.id)
       .single();
 
@@ -235,6 +242,8 @@ export const updateProfileAction = async (formData: FormData) => {
         full_name: full_name_n || O_data?.full_name,
         admin_year: admin_year_n || O_data?.admin_year,
         admin_no: admin_no_n || O_data?.admin_no,
+        dob: dob_f || O_data?.dob,
+        c_class: c_class_n || O_data?.c_class,
         address: address_n || O_data?.address,
         phone_no: phone_no_n || O_data?.phone_no,
         whatsapp_no: whatsapp_no_n || O_data?.whatsapp_no,

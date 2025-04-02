@@ -80,6 +80,12 @@ export default async function Signup(props: {
           <Input name="admin_no" placeholder="Your Admission Number" required />
           <Label htmlFor="admin_year">Admission Year</Label>
           <Input name="admin_year" placeholder="Your Admission Year" required />
+
+          <Label htmlFor="dob">Date of Birth</Label>
+          <Input name="dob" placeholder="Your Date of Birth" required />
+          <Label htmlFor="c_class">Current Class</Label>
+          <Input name="c_class" placeholder="Your Current Class" required />
+          
           <Label htmlFor="address">Address</Label>
           <Input name="address" placeholder="Your Address" required />
           <Label htmlFor="phone_no">Telephone Number</Label>
