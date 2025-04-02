@@ -116,7 +116,7 @@ export default async function DashboardPage() {
               variant={"outline"}
               className="rounded-md border-red-600 hover:bg-red-600"
               pendingText="Logging out..."
-              onClick={signOutAction}
+              formAction={signOutAction}
             >
               <LogOut />
               Logout
