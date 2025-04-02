@@ -60,6 +60,9 @@ import AuthButton from "@/components/HeaderAuth";
 import Link from "next/link";
 import Image from "next/image";
 import main_logo from "@/public/main_logo.webp";
+import ErrorComp from "@/components/error-comp";
+import { Button } from "@/components/ui/button";
+import { createClient } from "@/utils/supabase/server";
 
 export default function RootLayout({
   children,
@@ -99,9 +102,7 @@ export default function RootLayout({
         >
           {site_status === "true" ? (
             <main>
-              <Navbar>
-                <AuthButton />
-              </Navbar>
+              <Navbar><AuthButton /></Navbar>
               {children}
               <Footer />
             </main>
@@ -127,15 +128,15 @@ export default function RootLayout({
                 </p>
               </div>
               <span className="font-medium text-white text-sm py-5">
-                  Developed by{" "}
-                  <Link
-                    href="https://github.com/nethaka-sades"
-                    className="text-gray-300 hover:text-primary"
-                    prefetch
-                  >
-                    Nethaka De Saram
-                  </Link>
-                </span>
+                Developed by{" "}
+                <Link
+                  href="https://github.com/nethaka-sades"
+                  className="text-gray-300 hover:text-primary"
+                  prefetch
+                >
+                  Nethaka De Saram
+                </Link>
+              </span>
             </div>
           )}
         </ThemeProvider>
