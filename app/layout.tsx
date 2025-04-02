@@ -60,9 +60,6 @@ import AuthButton from "@/components/HeaderAuth";
 import Link from "next/link";
 import Image from "next/image";
 import main_logo from "@/public/main_logo.webp";
-import ErrorComp from "@/components/error-comp";
-import { Button } from "@/components/ui/button";
-import { createClient } from "@/utils/supabase/server";
 
 export default function RootLayout({
   children,
