@@ -20,8 +20,6 @@
  *  Created on Sat Feb 08 2025
  * 
  */
-
-import { signOutAction } from "@/app/actions";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { createClient } from "@/utils/supabase/server";
@@ -36,13 +34,13 @@ export default async function AuthButton() {
   return user ? (
     <div className="flex">
       <Button asChild size="sm" variant={"outline"} className="rounded text-orange-500 w-full">
-        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/dashboard" prefetch>Dashboard</Link>
       </Button>
     </div>
   ) : (
     <div className="flex">
       <Button asChild size="sm" variant={"outline"} className="rounded text-orange-500 w-full">
-        <Link href="/lms_access">Access LMS</Link>
+        <Link href="/lms_access" prefetch>Access LMS</Link>
       </Button>
     </div>
   );

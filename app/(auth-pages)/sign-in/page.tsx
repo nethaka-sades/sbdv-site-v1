@@ -29,13 +29,11 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
-import LoadingScreen from "@/components/LoadingScreen";
 
 export default async function Login(props: { searchParams: Promise<Message> }) {
   const searchParams = await props.searchParams;
   return (
     <div className="py-32 px-10 min-h-screen">
-      <LoadingScreen />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
         <Image
           src={imageb}
@@ -47,7 +45,7 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
         <h1 className="text-4xl lg:text-5xl font-special tracking-tight text-center font-medium">Access Your Account</h1>
         <p className="text-md text-foreground text-center font-plain my-3">
           Don't have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-up">
+          <Link className="text-primary font-medium underline" href="/sign-up" prefetch>
             Sign up
           </Link>
         </p>
@@ -59,6 +57,7 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
             <Link
               className="text-xs text-foreground underline"
               href="/forgot-password"
+              prefetch
             >
               Forgot Password?
             </Link>

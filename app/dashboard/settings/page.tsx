@@ -21,7 +21,6 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, KeyRound, Trash, User } from "lucide-react";
 import Link from "next/link";
@@ -29,8 +28,7 @@ import Link from "next/link";
 export default function Settings() {
   return (
     <main className="py-32 min-h-screen max-w-[300px] mx-auto">
-      <LoadingScreen />
-      <Link href={"/dashboard"}>
+      <Link href={"/dashboard"} prefetch>
         <Button className="text-primary-foreground my-2" variant="link">
           <ArrowLeft />
           Back to Dashboard
@@ -39,19 +37,19 @@ export default function Settings() {
       <div className="p-5 border rounded-md">
         <div className="mb-10 text-4xl font-bold text-center">Settings</div>
         <div className="flex flex-col items-center gap-y-5">
-          <Link href={"/dashboard/update-profile"}>
+          <Link href={"/dashboard/update-profile"} prefetch>
             <Button variant={"outline"} className="text-primary-foreground">
               <User />
               Update Profile
             </Button>
           </Link>
-          <Link href={"/dashboard/reset-password"}>
+          <Link href={"/dashboard/reset-password"} prefetch>
             <Button variant={"outline"} className="text-primary-foreground">
               <KeyRound />
               Update Password
             </Button>
           </Link>
-          <Link href={"/dashboard/delete-request"}>
+          <Link href={"/dashboard/delete-request"} prefetch>
             <Button variant={"destructive"} className="text-primary-foreground">
               <Trash />
               Delete Account

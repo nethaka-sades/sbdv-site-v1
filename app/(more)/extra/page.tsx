@@ -21,7 +21,6 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -93,7 +92,7 @@ export default function Extra() {
                 Perahera, discovering talents and enhancing leadership skills.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Link href="/extra/houses">
+                <Link href="/extra/houses" prefetch>
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
@@ -130,7 +129,7 @@ export default function Extra() {
                 competitions.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Link href="/extra/apg">
+                <Link href="/extra/apg" prefetch>
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
@@ -161,7 +160,7 @@ export default function Extra() {
                 Projects done by the Prefects Guild of the Sri Bodhiraja Dhamma School in the year 2024/25
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Link href="/extra/prefects_guild_projects">
+                <Link href="/extra/prefects_guild_projects" prefetch>
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"

@@ -21,12 +21,9 @@
  *
  */
 
-import LoadingScreen from "@/components/LoadingScreen";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, LogOut } from "lucide-react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import Link from "next/link";
 import { ModBtn } from "@/components/mod-btn";
 import { signOutAction } from "@/app/actions";
 
@@ -43,7 +40,6 @@ export default async function delete_confirmed_page() {
 
   return (
     <main className="flex flex-col items-center justify-center h-screen text-center px-10">
-      <LoadingScreen />
       <h1 className="text-5xl font-bold text-red-600 mb-1">Account Deleted</h1>
       <p className="text-gray-400 text-lg">
         You account is being deleted from our system.

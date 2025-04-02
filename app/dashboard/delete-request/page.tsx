@@ -26,7 +26,6 @@ import {
   signOutAction,
 } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
-import LoadingScreen from "@/components/LoadingScreen";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CircleX, LogOut, Trash } from "lucide-react";
 import { ModBtn } from "@/components/mod-btn";
@@ -62,7 +61,6 @@ export default async function delete_request_page(props: {
 
   return (
     <main className="flex flex-col items-center justify-center h-screen text-center px-10">
-      <LoadingScreen />
       <div>
         {data?.deletion_req ? (
           <div>

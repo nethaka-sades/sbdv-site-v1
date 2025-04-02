@@ -30,7 +30,6 @@ import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
 import { Separator } from "@/components/ui/separator";
-import LoadingScreen from "@/components/LoadingScreen";
 
 export default async function Signup(props: {
   searchParams: Promise<Message>;
@@ -46,7 +45,6 @@ export default async function Signup(props: {
 
   return (
     <div className="py-32 px-10 min-h-screen">
-      <LoadingScreen />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-zinc-950/100 -z-20"></div>
       <Image
         src={imageb}
@@ -60,7 +58,7 @@ export default async function Signup(props: {
         </h1>
         <p className="text-md text-foreground text-center font-plain my-3">
           Already have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-in">
+          <Link className="text-primary font-medium underline" href="/sign-in" prefetch>
             Sign in
           </Link>
         </p>

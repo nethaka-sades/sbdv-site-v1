@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
-                  <Link href="/" className="flex items-center space-x-2">
+                  <Link href="/" className="flex items-center space-x-2" prefetch>
                     <Image
                       src={main_logo}
                       alt="main_pic"
@@ -76,7 +76,7 @@ const Footer = () => {
                         key={linkIdx}
                         className="font-medium hover:text-primary"
                       >
-                        <a href={link.href}>{link.name}</a>
+                        <Link href={link.href} prefetch>{link.name}</Link>
                       </li>
                     ))}
                   </ul>
@@ -98,6 +98,7 @@ const Footer = () => {
                   <Link
                     href="https://github.com/nethaka-sades"
                     className="text-gray-300 hover:text-primary"
+                    prefetch
                   >
                     Nethaka De Saram
                   </Link>

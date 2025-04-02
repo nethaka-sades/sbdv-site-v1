@@ -200,7 +200,7 @@ export default function Aboutdp() {
                   such as compassion, mindfulness, and right conduct.
                 </p>
                 <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                  <Link href="/teaching_panel">
+                  <Link href="/teaching_panel" prefetch>
                     <Button
                       variant={"outline"}
                       className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
@@ -243,7 +243,7 @@ export default function Aboutdp() {
                   learning atmosphere
                 </p>
                 <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                  <Link href="/extra">
+                  <Link href="/extra" prefetch>
                     <Button
                       variant={"outline"}
                       className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"

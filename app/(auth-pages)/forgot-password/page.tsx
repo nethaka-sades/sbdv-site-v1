@@ -47,7 +47,7 @@ export default async function ForgotPassword(props: {
         <h1 className="text-4xl lg:text-5xl font-special tracking-tight text-center font-medium">Forgot Password?</h1>
         <p className="text-md text-foreground text-center font-plain my-3">
         Already have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-in">
+          <Link className="text-primary font-medium underline" href="/sign-in" prefetch>
             Sign in
           </Link>
         </p>

@@ -31,7 +31,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import LoadingScreen from "@/components/LoadingScreen";
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -77,7 +76,7 @@ export default function Lms() {
                   Access Your Account
                 </CardDescription>
                 <CardFooter className="flex flex-col gap-3">
-                  <Link href={"/sign-in"}>
+                  <Link href={"/sign-in"} prefetch>
                     <Button className="w-80 bg-primary" variant={"outline"}>
                       Login
                     </Button>
@@ -92,7 +91,7 @@ export default function Lms() {
                   Create a new Account
                 </CardDescription>
                 <CardFooter className="flex flex-col gap-3">
-                  <Link href={"/sign-up"}>
+                  <Link href={"/sign-up"} prefetch>
                     <Button className="w-80" variant={"outline"}>
                       Register
                     </Button>

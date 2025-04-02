@@ -77,7 +77,7 @@ export default function more_res() {
                     Download your textbooks according to your grade
                   </CardDescription>
                   <CardFooter className="flex flex-col gap-3">
-                    <Link href={"/textbooks"}>
+                    <Link href={"/textbooks"} prefetch>
                       <Button className="w-80 bg-primary" variant={"outline"}>
                         Select Grade
                       </Button>
@@ -92,7 +92,7 @@ export default function more_res() {
                     Download Past papers
                   </CardDescription>
                   <CardFooter className="flex flex-col gap-3">
-                    <Link href={"/pastpapers"}>
+                    <Link href={"/pastpapers"} prefetch>
                       <Button className="w-80 bg-primary" variant={"outline"}>
                         Select Grade
                       </Button>

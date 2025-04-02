@@ -26,11 +26,9 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { User } from "lucide-react";
 import Image from "next/image";
 import main_logo from "@/public/main_logo.webp";
 import logo_only from "@/public/logo.webp";
-import bg_webp from "@/public/hero-images/1.webp";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -69,7 +67,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
     <header className="font-normal sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 md:h-16">
         <div className="flex items-center space-x-4 lg:space-x-6 ml-8">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2" prefetch>
             <Image
               src={main_logo}
               alt="main_pic"
@@ -93,6 +91,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                           <Link
                             className="flex h-full w-full select-none flex-col text-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                             href="/about_dp"
+                            prefetch
                           >
                             <Image
                               src={logo_only}
@@ -154,7 +153,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
             variant={"outline"}
             className="hidden sm:flex rounded text-orange-500 w-full"
           >
-            <Link href="/learning_materials">Learning Materials</Link>
+            <Link href="/learning_materials" prefetch>Learning Materials</Link>
           </Button>
           {/*<ThemeSwitcher />*/}
           <div className="hidden sm:flex">{children}</div>
@@ -238,7 +237,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
                     setIsOpen(false);
                   }}
                 >
-                  <Link href="/learning_materials">Learning Materials</Link>
+                  <Link href="/learning_materials" prefetch>Learning Materials</Link>
                 </Button>
                 <div onClick={(e) => setIsOpen(false)}>
                   {children}
@@ -291,6 +290,7 @@ function MobileLink({
   return (
     <Link
       href={href}
+      prefetch
       onClick={() => {
         onOpenChange?.(false);
       }}

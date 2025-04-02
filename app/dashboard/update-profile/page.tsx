@@ -22,7 +22,6 @@
  */
 import { resetPasswordAction, updateProfileAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
-import LoadingScreen from "@/components/LoadingScreen";
 import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -60,8 +59,7 @@ export default async function UpdateProfile(props: {
 
   return (
     <main className="min-h-screen px-20 py-20 lg:max-w-2xl mx-auto">
-      <LoadingScreen />
-      <Link href={"/dashboard"}>
+      <Link href={"/dashboard"} prefetch>
         <Button className="text-primary-foreground my-2" variant="link">
           <ArrowLeft />
           Back to Dashboard
