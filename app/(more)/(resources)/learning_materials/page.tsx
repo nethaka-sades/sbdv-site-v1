@@ -35,6 +35,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import imageb from "@/public/images/p6.webp";
+import ServiceDown from "@/components/service-down";
 
 export default function more_res() {
   const lm_status = process.env.LM_STATUS;
@@ -104,16 +105,7 @@ export default function more_res() {
           </section>
         </main>
       ) : (
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-6 p-6">
-            <h1 className="text-4xl font-bold text-white">
-              This Service is Currently Down
-            </h1>
-            <p className="text-lg text-neutral-200 max-w-md">
-              Please check back later or contact support for more information.
-            </p>
-          </div>
-        </div>
+        <ServiceDown />
       )}
     </div>
   );

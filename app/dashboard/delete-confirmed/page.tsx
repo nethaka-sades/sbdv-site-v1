@@ -26,16 +26,21 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { ModBtn } from "@/components/mod-btn";
 import { signOutAction } from "@/app/actions";
+import ErrorComp from "@/components/error-comp";
 
 export default async function delete_confirmed_page() {
-  const supabase = await createClient();
+  try {
+    const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-  if (!user) {
-    return redirect("/sign-in");
+    if (!user) {
+      return redirect("/sign-in");
+    }
+  } catch {
+    return <ErrorComp />;
   }
 
   return (

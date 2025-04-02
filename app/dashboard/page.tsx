@@ -29,11 +29,15 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import LoadingScreen from "@/components/LoadingScreen";
 import { ModBtn } from "@/components/mod-btn";
 import { Button } from "@/components/ui/button";
+import ErrorComp from "@/components/error-comp";
 
 export default async function DashboardPage() {
+  var profilesData = null;
+  var notices = null;
+  var marks_data = null;
+  try {
   const supabase = await createClient();
 
   const {
@@ -47,55 +51,61 @@ export default async function DashboardPage() {
   const { data, error, status } = await supabase
     .from("profiles")
     .select(
-      `full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified, deletion_req, deletion_req_date, deletion_confirmed`
+      `full_name, admin_year, admin_no, address, phone_no, whatsapp_no, verified, deletion_req, deletion_req_date, deletion_confirmed, user_email`
     )
     .eq("id", user?.id)
     .single();
 
   if (error && status !== 406) {
-    console.log(error);
-    throw error;
+    return <ErrorComp />
+  } else {
+    profilesData = data;
   }
 
-  if (data?.deletion_confirmed) {
+  if (profilesData?.deletion_confirmed) {
     return redirect("/dashboard/delete-confirmed");
   }
 
-  if (data?.deletion_req) {
+  if (profilesData?.deletion_req) {
     return redirect("/dashboard/delete-request");
   }
 
-  if (!data?.verified) {
+  if (!profilesData?.verified) {
     return redirect("/dashboard/verification");
   }
 
-  const { data: notices, error: notices_error } = await supabase
+  const { data: notices_g, error: notices_error } = await supabase
     .from("notices")
     .select("*")
-    .order("created_at", { ascending: false }); // Order by creation time, newest first
+    .order("created_at", { ascending: false });
 
   if (notices_error) {
-    console.log(notices_error);
-    throw notices_error;
+    return <ErrorComp />
+  } else {
+    notices = notices_g;
   }
 
-  const { data: marks_data, error: marks_data_error } = await supabase
+  const { data: marks_data_g, error: marks_data_error } = await supabase
     .from("marks")
     .select(`first_term, second_term, third_term`)
     .eq("id", user?.id)
     .single();
 
   if (marks_data_error?.code == "PGRST116") {
-    marks_data?.first_term == "-";
-    marks_data?.second_term == "-";
-    marks_data?.third_term == "-";
+    marks_data_g?.first_term == "-";
+    marks_data_g?.second_term == "-";
+    marks_data_g?.third_term == "-";
   } else if (marks_data_error) {
-    console.log(marks_data_error);
+    return <ErrorComp />
+  } else {
+    marks_data = marks_data_g;
   }
+} catch {
+  return <ErrorComp />
+}
 
   return (
     <main className="text-white min-h-screen">
-      <LoadingScreen />
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row justify-between space-y-5 items-center mb-8">
           <h1 className="text-3xl lg:text-5xl font-bold font-special ">
@@ -122,11 +132,11 @@ export default async function DashboardPage() {
                 <div className="flex flex-col space-y-3 md:flex-row justify-between items-center w-full">
                   <div className="flex flex-col">
                     <h2 className="text-xl lg:text-3xl font-bold">
-                      {data?.full_name}
+                      {profilesData?.full_name || "Error"}
                     </h2>
-                    <p className="text-orange-400">{user?.email}</p>
+                    <p className="text-orange-400">{profilesData?.user_email}</p>
                   </div>
-                  <Link href={"/dashboard/settings"}>
+                  <Link href={"/dashboard/settings"} prefetch>
                     <Button
                       variant={"outline"}
                       className="rounded-md hover:bg-orange-600"
@@ -142,32 +152,32 @@ export default async function DashboardPage() {
                   <div>
                     <div className="text-gray-400">Admission No</div>
                     <div className="text-xl text-white font-bold">
-                      {data?.admin_no}
+                      {profilesData?.admin_no}
                     </div>
                   </div>
                   <div>
                     <div className="text-gray-400">Admission Year</div>
                     <div className="text-xl text-white font-bold">
-                      {data?.admin_year}
+                      {profilesData?.admin_year}
                     </div>
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-400">Address</div>
                   <div className="text-xl text-white font-bold">
-                    {data?.address}
+                    {profilesData?.address}
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-400">Phone No</div>
                   <div className="text-xl text-white font-bold">
-                    {data?.phone_no}
+                    {profilesData?.phone_no}
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-400">WhatsaApp No</div>
                   <div className="text-xl text-white font-bold">
-                    {data?.whatsapp_no}
+                    {profilesData?.whatsapp_no}
                   </div>
                 </div>
               </div>

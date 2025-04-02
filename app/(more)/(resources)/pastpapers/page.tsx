@@ -21,31 +21,42 @@
  *
  */
 
+import ErrorComp from "@/components/error-comp";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 
 export default async function PastPapersDownloadPage() {
+  var pastpapers_first = null;
+  var pastpapers_second = null;
+  var pastpapers_third = null;
+  try{
   const supabase = await createClient();
 
-  const { data: pastpapers_first, error: error1 } = await supabase
+  const { data: pastpapers_first_g, error: error1 } = await supabase
     .from("pastpapers_first")
     .select("*")
     .order("order", { ascending: true });
 
-  const { data: pastpapers_second, error: error2 } = await supabase
+  const { data: pastpapers_second_g, error: error2 } = await supabase
     .from("pastpapers_second")
     .select("*")
     .order("order", { ascending: true });
 
-  const { data: pastpapers_third, error: error3 } = await supabase
+  const { data: pastpapers_third_g, error: error3 } = await supabase
     .from("pastpapers_third")
     .select("*")
     .order("order", { ascending: true });
 
   if (error1 || error2 || error3) {
-    console.log(error1 || error2 || error3);
-    throw error1 || error2 || error3;
+    return <ErrorComp />
+  } else {
+    pastpapers_first = pastpapers_first_g;
+    pastpapers_second = pastpapers_second_g;
+    pastpapers_third = pastpapers_third_g;
   }
+} catch {
+  return <ErrorComp />
+}
 
   return (
     <main className="py-12 px-10">

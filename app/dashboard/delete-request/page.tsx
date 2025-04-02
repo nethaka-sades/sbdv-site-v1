@@ -32,62 +32,70 @@ import { ModBtn } from "@/components/mod-btn";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
+import ErrorComp from "@/components/error-comp";
 
 export default async function delete_request_page(props: {
   searchParams: Promise<Message>;
 }) {
   const searchParams = await props.searchParams;
 
-  const supabase = await createClient();
+  var deletion_req = null;
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const supabase = await createClient();
 
-  if (!user) {
-    return redirect("/sign-in");
-  }
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-  const { data, error, status } = await supabase
-    .from("profiles")
-    .select(`deletion_req`)
-    .eq("id", user?.id)
-    .single();
+    if (!user) {
+      return redirect("/sign-in");
+    }
 
-  if (error && status !== 406) {
-    console.log(error);
-    throw error;
+    const { data, error, status } = await supabase
+      .from("profiles")
+      .select(`deletion_req`)
+      .eq("id", user?.id)
+      .single();
+
+    if (error && status !== 406) {
+      return <ErrorComp />;
+    } else {
+      deletion_req = data?.deletion_req;
+    }
+  } catch {
+    return <ErrorComp />;
   }
 
   return (
     <main className="flex flex-col items-center justify-center h-screen text-center px-10">
       <div>
-        {data?.deletion_req ? (
+        {deletion_req ? (
           <div>
             <div className="my-5 text-red-500 font-semibold text-2xl">
               Deletion Request Sent
             </div>
             <div className="flex flex-col items-center space-y-5">
               <form>
-              <ModBtn
-                variant={"outline"}
-                formAction={cancel_request_deletion}
-                pendingText="Requesting..."
-              >
-                <CircleX />
-                Cancel Request
-              </ModBtn>
+                <ModBtn
+                  variant={"outline"}
+                  formAction={cancel_request_deletion}
+                  pendingText="Requesting..."
+                >
+                  <CircleX />
+                  Cancel Request
+                </ModBtn>
               </form>
               <form>
-              <ModBtn
-                className="my-5"
-                variant={"destructive"}
-                formAction={signOutAction}
-                pendingText="Requesting..."
-              >
-                <LogOut />
-                Logout
-              </ModBtn>
+                <ModBtn
+                  className="my-5"
+                  variant={"destructive"}
+                  formAction={signOutAction}
+                  pendingText="Requesting..."
+                >
+                  <LogOut />
+                  Logout
+                </ModBtn>
               </form>
             </div>
             <FormMessage message={searchParams} />
@@ -100,15 +108,15 @@ export default async function delete_request_page(props: {
               the data assosiated with the account will be deleted.
             </p>
             <form>
-            <ModBtn
-              className="my-5"
-              variant={"destructive"}
-              formAction={request_deletion}
-              pendingText="Requesting..."
-            >
-              <Trash />
-              Delete Account
-            </ModBtn>
+              <ModBtn
+                className="my-5"
+                variant={"destructive"}
+                formAction={request_deletion}
+                pendingText="Requesting..."
+              >
+                <Trash />
+                Delete Account
+              </ModBtn>
             </form>
             <FormMessage message={searchParams} />
             <Link href={"/dashboard"}>
