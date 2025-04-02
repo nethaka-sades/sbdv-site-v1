@@ -60,10 +60,6 @@ export const updateSession = async (request: NextRequest) => {
       return NextResponse.redirect(new URL("/sign-in", request.url));
     }
 
-    if (request.nextUrl.pathname.startsWith("/dashboard") && user.error) {
-      return NextResponse.redirect(new URL("/", request.url));
-    }
-
     if (request.nextUrl.pathname === "/lms_access" && !user.error) {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
