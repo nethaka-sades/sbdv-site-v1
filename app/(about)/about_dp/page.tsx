@@ -32,6 +32,7 @@ import image2 from "@/public/images/p8.webp";
 import image3 from "@/public/images/p1.webp";
 import image4 from "@/public/images/p9.webp";
 import teachers_grp_pic from "@/public/images/teacher_grp_pic.webp";
+import s_pic from "@/public/images/sangarathana_thero.png";
 import Link from "next/link";
 
 export default function Aboutdp() {
@@ -183,6 +184,57 @@ export default function Aboutdp() {
               teachings of the Dhamma, and nurturing a new generation of
               individuals dedicated to upholding Buddhist values.
             </p>
+          </div>
+        </section>
+
+        <section className="px-5 py-10">
+          <div className="container">
+            <div className="grid items-center lg:grid-cols-2 border-gray-700 border  bg-black bg-opacity-10 p-8 rounded-3xl shadow-md">
+              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                <h1 className="pb-5 text-pretty text-xl font-bold lg:text-xl font-special">
+                  Message from the Principal Thero
+                </h1>
+                <p className="mb-2 max-w-2xl text-muted-foreground lg:text-lg font-plain">
+                  It can be humbly stated that Sri Bodhiraja Dharma Vidyalaya,
+                  which began in 1957 with limited facilities and a small group
+                  of children, has today grown into one of the leading Dharma
+                  Vidyalayas in Sri Lanka. With a broad vision, it continues to
+                  provide the enlightenment of the Dhamma to thousands of
+                  children. The credit for this achievement belongs to all the
+                  past principal theros and Dhamma teachers who have dedicated
+                  themselves to the progress of our Dharma Vidyalaya over the
+                  years. In today's world, running a Dharma Vidyalaya has become
+                  an increasingly challenging task. The intense demands of
+                  school education and the early focus on achieving material
+                  success have led to a diminished emphasis on Buddhism—a
+                  subject that nurtures human civilization. However, at a time
+                  when moral values in society are rapidly eroding, the guidance
+                  and spiritual foundation provided by the Dharma Vidyalaya have
+                  played a crucial role in preserving these timeless virtues. In
+                  response to these challenges, our Dharma Vidyalaya is more
+                  than just another school that imparts textbook knowledge.
+                  Instead, we strive to provide children with a deeper
+                  understanding of Buddhist customs, rituals, religious
+                  practices, and mindfulness through meditation. Our goal is not
+                  only to educate but also to shape well-rounded individuals who
+                  uphold the values of Buddhism in their daily lives. I would
+                  also like to express my deep gratitude to my teacher, the
+                  Chief Incumbent of Bellanwila Rajamaha Viharaya, Venerable
+                  Bellanwila Dhammarathana Thero, whose unwavering guidance and
+                  encouragement have been instrumental in making these efforts a
+                  success. 
+                  <br />
+                  <br />
+                  Ven. Bellanwila Sangharathana Thero Principal Thero,<br />
+                  Sri Bodhiraja Dharma Vidyalaya (Bachelor of Arts – Honours)
+                </p>
+              </div>
+              <Image
+                src={s_pic}
+                alt="hero"
+                className="w-full rounded-md object-cover"
+              />
+            </div>
           </div>
         </section>
 

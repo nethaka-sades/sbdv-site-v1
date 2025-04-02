@@ -25,6 +25,7 @@ import Image from "next/image";
 import image1 from "@/public/hero-images/1.webp";
 import image2 from "@/public/images/p1.webp";
 import image3 from "@/public/images/p3.webp";
+import d_pic from "@/public/images/dammarathana_thero.png";
 
 export default function bt() {
   return (
@@ -99,7 +100,54 @@ export default function bt() {
               </div>
             </div>
           </section>
-        </section>        
+        </section>
+
+        <section className="px-5 py-10">
+          <div className="container">
+            <div className="grid items-center lg:grid-cols-2 border-gray-700 border  bg-black bg-opacity-10 p-8 rounded-3xl shadow-md">
+              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                <h1 className="pb-5 text-pretty text-xl font-bold lg:text-xl font-special">
+                  Message from the Chief Incumbent
+                </h1>
+                <p className="mb-2 max-w-2xl text-muted-foreground lg:text-lg font-plain">
+                  Bellanwila Sri Bodhiraja Dharma Vidyalaya, founded by the late
+                  Venerable Bellanwila Sri Somarathana Thera, former Chief
+                  Incumbent of Bellanwila Rajamaha Viharaya, has now entered its
+                  sixty-seventh year of dedicated service to Buddhist education.
+                  What began with just fifty students has flourished into a
+                  prestigious institution, now home to nearly two thousand
+                  students. Over the years, the school has steadily grown,
+                  upholding its esteemed reputation and serving as a beacon of
+                  Dhamma education. Witnessing its continuous development is a
+                  source of immense joy and fulfillment. Through Sri Bodhiraja
+                  Dharma Vidyalaya, we have been able to nurture a generation of
+                  wise, virtuous, and compassionate children who contribute
+                  meaningfully to Sri Lankan society. This achievement is a
+                  testament to the dedication of all those who have supported
+                  the school’s mission. I also wish to remember with deep
+                  gratitude the late Professor Venerable Bellanwila Wimaratne
+                  Thero, whose unwavering commitment played a vital role in
+                  elevating Sri Bodhiraja Dharma Vidyalaya to the esteemed
+                  standard it upholds today. May the blessings of the Triple Gem
+                  be upon all who contribute to and learn from this noble
+                  institution. 
+                  <br />
+                  <br />
+                  Ven. Dr. Bellanwila Dhammarathana Thero Chief<br />
+                  Incumbent, Bellanwila Rajamaha Viharaya & Atthidiya<br />
+                  Maligawatta Purana Viharaya Chief Sanghanayake of Singapore<br />
+                  Founder, Buddhist Library in Singapore & Kadugannawa Paramita<br />
+                  Buddhist Centre Patron, Sri Bodhiraja Dharma Vidyalaya<br />
+                </p>
+              </div>
+              <Image
+                src={d_pic}
+                alt="hero"
+                className="w-full rounded-md object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
         <section className="px-10 relative overflow-hidden container">
           <div className="max-w-7xl text-center pt-12 lg:pt-16  pb-12 mx-auto ">
@@ -162,8 +210,8 @@ export default function bt() {
             </p>
             <p className="mt-5 text-sm md:text-lg text-muted-foreground leading-4 md:leading-snu">
               A recent addition to the temple is a set of murals, that adorn the
-              inner walls of the shrine hall &#40Budu-Ge@#41. These murals which were
-              painted by artist Somabandu Vidyapathy, depict in different
+              inner walls of the shrine hall &#40Budu-Ge@#41. These murals which
+              were painted by artist Somabandu Vidyapathy, depict in different
               strokes the life of the Buddha and Buddhism. In addition to the
               main shrine hall there are shrines dedicated to popular deities of
               Sri Lanka such as Vishnu, Katharagama, Saman, Vibheeshana, Suniam,
