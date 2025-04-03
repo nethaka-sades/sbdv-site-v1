@@ -70,7 +70,7 @@ export default async function DashboardPage() {
     return redirect("/dashboard/delete-request");
   }
 
-  if (!profilesData?.verified) {
+  if (profilesData?.verified === false) {
     return redirect("/dashboard/verification");
   }
 
@@ -100,7 +100,10 @@ export default async function DashboardPage() {
   } else {
     marks_data = marks_data_g;
   }
-} catch {
+} catch (error) {
+  if (error instanceof Error && error.message === "NEXT_REDIRECT") {
+    throw error; // Allow Next.js to handle redirect
+  }
   return <ErrorComp />
 }
 
