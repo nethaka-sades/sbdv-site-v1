@@ -25,8 +25,12 @@ const Contact = () => {
                 <MapPin className="h-6 w-auto" />
               </span>
               <p className="mb-2 text-lg font-semibold">Visit Us</p>
-              <a href="https://maps.app.goo.gl/YiJc4kU3JiYrk8Xh6" className="hover:underline">
-                Bellanvila Sri Bodhiraja Dhamma School, Bellanvila Raja Maha Viharaya
+              <a
+                href="https://maps.app.goo.gl/YiJc4kU3JiYrk8Xh6"
+                className="hover:underline"
+              >
+                Bellanvila Sri Bodhiraja Dhamma School, Bellanvila Raja Maha
+                Viharaya
               </a>
             </div>
             <div>
@@ -45,7 +49,7 @@ const Contact = () => {
         <div className="container">
           <div className="mb-14">
             <h1 className="mt-1 mb-3 text-3xl font-semibold text-balance md:text-4xl">
-              Contact Our Admins
+              Contact Site Admins
             </h1>
           </div>
           <div className="grid gap-10 md:grid-cols-3">
@@ -72,11 +76,27 @@ const Contact = () => {
                 (+94) 76 078 3499
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-28">
+        <div className="container">
+          <div className="mb-14">
+            <h1 className="mt-1 mb-3 text-3xl font-semibold text-balance md:text-4xl">
+              Contact Office Administration
+            </h1>
+          </div>
+          <div className="grid gap-10 md:grid-cols-3">
             <div>
               <p className="mb-1 text-lg font-semibold">Nadeeka Munasinghe</p>
-              <p className="mb-1 text-muted-foreground">Teacher in Charge</p>
               <a href="#" className="font-semibold hover:underline">
                 (+94) 77 306 2736
+              </a>
+            </div>
+            <div>
+              <p className="mb-1 text-lg font-semibold">Anuradha Perera</p>
+              <a href="#" className="font-semibold hover:underline">
+                (+94) 71 055 0057
               </a>
             </div>
           </div>

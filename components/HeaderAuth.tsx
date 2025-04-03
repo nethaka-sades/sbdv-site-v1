@@ -26,6 +26,7 @@ import { createClient } from "@/utils/supabase/server";
 
 export default async function AuthButton() {
   var user = null;
+  var full_name = null;
   try {
     const supabase = await createClient();
 
@@ -43,10 +44,10 @@ export default async function AuthButton() {
         asChild
         size="sm"
         variant={"outline"}
-        className="rounded text-orange-500 w-full"
+        className="rounded text-white w-full"
       >
         <Link href="/dashboard" prefetch>
-          Dashboard
+         Dashboard
         </Link>
       </Button>
     </div>
