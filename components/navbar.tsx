@@ -54,7 +54,7 @@ const more_components: { title: string; href: string; description: string }[] =
       description: "More than a educational institute",
     },
     {
-      title: "Prefects Guild",
+      title: "Prefects Guild 2024/25",
       href: "/prefects_guild",
       description: "Sri Bodhiraja Dhamma School's Prefects Guild.",
     },

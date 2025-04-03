@@ -42,12 +42,14 @@ const hps = [
     id: "hp-1",
     name: "Lakwan Lonidu",
     role: "Head Prefect",
+    school: "Ananda College",
     avatar: hp1.src,
   },
   {
     id: "hp-2",
     name: "Selini Dulwanya",
     role: "Head Prefect",
+    school: "Vishaka Vidyalaya",
     avatar: hp2.src,
   },
 ];
@@ -129,12 +131,13 @@ export default function pg() {
           <div className="container grid gap-y-10 md:grid-cols-1 lg:grid-cols-2">
             {hps.map((hps) => (
               <div key={hps.id} className="flex flex-col items-center">
-                <Avatar className="mb-4 size-28 border md:mb-5 lg:size-24">
+                <Avatar className="mb-4 size-28 border md:mb-5 lg:size-32">
                   <AvatarImage src={hps.avatar} />
                   <AvatarFallback>{hps.name}</AvatarFallback>
                 </Avatar>
                 <p className="text-center font-medium">{hps.name}</p>
-                <p className="text-center text-muted-foreground">{hps.role}</p>
+                <p className="text-center text-primary">{hps.role}</p>
+                <p className="text-center text-muted-foreground">{hps.school}</p>
               </div>
             ))}
           </div>
