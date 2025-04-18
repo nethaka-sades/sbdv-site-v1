@@ -22,8 +22,6 @@
  */
 
 import Image from "next/image";
-import aboutCarosel from "@/components/PrinciplesStrip";
-import PrinciplesStrip from "@/components/PrinciplesStrip";
 import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -109,7 +107,7 @@ export default function Aboutdp() {
                 <p className="text-sm font-medium text-muted-foreground">
                   with around
                 </p>
-                <p className="pt-2 text-7xl font-semibold lg:pt-1">100</p>
+                <p className="pt-2 text-7xl font-semibold lg:pt-1">50</p>
                 <p className="text-2xl text-muted-foreground">teachers</p>
               </div>
             </div>
