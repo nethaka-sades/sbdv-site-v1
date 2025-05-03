@@ -28,7 +28,7 @@ import grppic from "@/public/images/teacher_grp_pic.webp";
 const teachers_names = [
   "Ven Bellanvila Sangarathana Thera",
   "Ven Wagawatte Wimalawansha Thera",
-  "Ven Thalawe Panchcharansi Thera",
+  "Ven Thalawe Pangngnasiri Thera",
   "Ven Okkampitiye Vidyananda Thera",
   "Ven Balangoda Ananda Thera",
   "Ven Shanthabadra Thera",
@@ -60,7 +60,7 @@ const teachers_names = [
   "Miss. Thilini Puurnima",
   "Mrs. Nadeeka Chathurani",
   "Mrs. Maheesha Nadee",
-  "Miss. Inoli Prathiba",
+  "Ms. Inoli Prathiba",
   "Miss. Anurada Perera",
   "Mrs. K. Kumuduni",
   "Mrs. Kanthi Wijerathna",
@@ -80,7 +80,7 @@ const teachers_names = [
   "Mrs. Ishani Pathirana",
   "Mrs. Keshala Ruwanmali",
   "Mrs. Nalini Abesinghe",
-  "Mrs. Yomal Malitha",
+  "Mr. Yomal Malitha",
   "Mrs. Nilushika Madushani",
   "Mrs. Jayamini Apsara",
 ];

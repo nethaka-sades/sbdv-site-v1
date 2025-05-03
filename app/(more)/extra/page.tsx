@@ -26,10 +26,12 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import image1 from "@/public/images/p6.webp";
-import image2 from "@/public/images/p7.webp";
 import image3 from "@/public/images/p10.webp";
 import image4 from "@/public/images/p5.webp";
 import image5 from "@/public/images/p15.webp";
+import image6 from "@/public/images/p16.webp";
+import image7 from "@/public/images/p19.webp";
+import image8 from "@/public/images/p22.webp";
 
 export default function Extra() {
   return (
@@ -148,6 +150,78 @@ export default function Extra() {
         <div className="container">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <Image
+              src={image6}
+              alt="hero"
+              className="max-h-96 w-full rounded-md object-cover"
+            />
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <h1 className="pb-5 text-pretty text-4xl font-bold lg:text-6xl font-special">
+                Annual Esala Perahara
+              </h1>
+              <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg font-plain">
+                One of the most significant avenues of student involvement is
+                their dedicated participation in the annual Esala Maha Perahera
+                — a revered cultural and religious celebration. Through selfless
+                service and active engagement in the temple’s sacred duties,
+                students are given the opportunity to deepen their understanding
+                of Buddhist values while contributing to one of Sri Lanka’s most
+                honored traditions.
+              </p>
+              <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+                <Link href="/extra/perahara" prefetch>
+                  <Button
+                    variant={"outline"}
+                    className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
+                  >
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-10 pb-3 px-20">
+        <div className="container">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <Image
+              src={image7}
+              alt="hero"
+              className="max-h-96 w-full rounded-md object-cover"
+            />
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <h1 className="pb-5 text-pretty text-4xl font-bold lg:text-6xl font-special">
+                Duty in Devotion
+              </h1>
+              <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg font-plain">
+                Students of the Sri Bodhiraja Dhamma School actively take part
+                in the monthly Poya Day religious observances organized by the
+                Bellanwila Raja Maha Viharaya. Through these duties, they deepen
+                their spiritual understanding while contributing meaningfully to
+                temple traditions.
+              </p>
+              <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+                <Link href="/extra/poya" prefetch>
+                  <Button
+                    variant={"outline"}
+                    className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
+                  >
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-10 pb-3 px-20">
+        <div className="container">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <Image
               src={image4}
               alt="hero"
               className="max-h-96 w-full rounded-md object-cover"
@@ -157,10 +231,42 @@ export default function Extra() {
                 Prefects Guild's Projects
               </h1>
               <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg font-plain">
-                Projects done by the Prefects Guild of the Sri Bodhiraja Dhamma School in the year 2024/25
+                Projects done by the Prefects Guild of the Sri Bodhiraja Dhamma
+                School in the year 2024/25
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
                 <Link href="/extra/prefects_guild_projects" prefetch>
+                  <Button
+                    variant={"outline"}
+                    className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"
+                  >
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-10 pb-3 px-20">
+        <div className="container">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <Image
+              src={image8}
+              alt="hero"
+              className="max-h-96 w-full rounded-md object-cover"
+            />
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <h1 className="pb-5 text-pretty text-4xl font-bold lg:text-6xl font-special">
+                Our Achievements
+              </h1>
+              <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg font-plain">
+                See Our Achievements with in the Dhamma School and Outside it.
+              </p>
+              <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+                <Link href="/extra/achs" prefetch>
                   <Button
                     variant={"outline"}
                     className="border-orange-600 w-full sm:w-auto hover:bg-orange-600 rounded"

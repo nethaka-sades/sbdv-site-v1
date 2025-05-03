@@ -25,6 +25,7 @@ import Image from "next/image";
 import image1 from "@/public/images/p11.webp";
 import image2 from "@/public/images/p12.webp";
 import image3 from "@/public/images/p10.webp";
+import image4 from "@/public/images/p18.webp";
 
 export default function houses() {
   return (
@@ -105,7 +106,7 @@ export default function houses() {
         <div className="container">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <Image
-              src={image3}
+              src={image4}
               alt="hero"
               className="max-h-96 w-full rounded-md object-cover"
             />

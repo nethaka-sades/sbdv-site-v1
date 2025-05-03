@@ -22,7 +22,7 @@
  */
 
 import Image from "next/image";
-import image1 from "@/public/images/p11.webp";
+import image1 from "@/public/images/p15.webp";
 import image2 from "@/public/images/p12.webp";
 import image3 from "@/public/images/p10.webp";
 
