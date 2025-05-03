@@ -17,7 +17,7 @@ const Contact = () => {
               </span>
               <p className="mb-2 text-lg font-semibold">Email Us</p>
               <a href="#" className="hover:underline">
-                abc@example.com
+                sbdsbellanwilaweb@gmail.com
               </a>
             </div>
             <div>
@@ -26,7 +26,7 @@ const Contact = () => {
               </span>
               <p className="mb-2 text-lg font-semibold">Visit Us</p>
               <a
-                href="https://maps.app.goo.gl/YiJc4kU3JiYrk8Xh6"
+                href="https://maps.app.goo.gl/u7smpXJC9fA9XgtL7"
                 className="hover:underline"
               >
                 Bellanvila Sri Bodhiraja Dhamma School, Bellanvila Raja Maha
@@ -39,7 +39,7 @@ const Contact = () => {
               </span>
               <p className="mb-2 text-lg font-semibold">Call Us</p>
               <a href="#" className="hover:underline">
-                +123 456 7890
+                (+94) 77 306 2736
               </a>
             </div>
           </div>
